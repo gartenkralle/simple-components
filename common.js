@@ -1,5 +1,4 @@
-export async function loadHtml(path) {
-  const htmlText = await (await fetch(path)).text();
+export async function loadHtml(htmlText) {
   const tempDiv = document.createElement('div');
         
   tempDiv.innerHTML = htmlText;

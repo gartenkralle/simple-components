@@ -1,7 +1,19 @@
 import { loadHtml } from './common.js';
 
-export async function loadTable(path, element, jsonData){
-    let htmlElement = await loadHtml(path);
+export async function loadTable(element, jsonData){
+    let htmlElement = await loadHtml(/*html*/
+       `<table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>`
+    );
 
     const tableBody = htmlElement.querySelector("tbody");
         

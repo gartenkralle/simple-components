@@ -1,0 +1,28 @@
+[
+    {
+      "Name": "John Doe",
+      "Email": "john.doe@example.com",
+      "Actions": ["Edit", "Delete"]
+    },
+    {
+      "Name": "Jane Smith",
+      "Email": "jane.smith@example.com",
+      "Actions": ["View", "Edit"]
+    },
+    {
+      "Name": "Alice Johnson",
+      "Email": "alice.johnson@example.com",
+      "Actions": ["Delete"]
+    },
+    {
+      "Name": "Bob Brown",
+      "Email": "bob.brown@example.com",
+      "Actions": ["Edit", "View"]
+    },
+    {
+      "Name": "Charlie White",
+      "Email": "charlie.white@example.com",
+      "Actions": ["View"]
+    }
+  ]
+  

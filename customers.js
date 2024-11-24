@@ -1,23 +1,33 @@
-import { function1 } from './common.js';
+import { loadHtml, loadJson } from './common.js';
 
+let htmlElement = await loadHtml('customers.html');
+let jsonData = await loadJson('test.json');
 
-const html = /*html*/`
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Emdajhil</th>
-        <th>Actimnbons</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>einfs</td>
-        <td>zwei</td>
-        <td>drei</td>
-      </tr>
-    </tbody>
-  </table>
-`;
+const tableBody = htmlElement.querySelector("tbody");
+    
+tableBody.innerHTML = '';
 
-document.getElementById('customers').innerHTML = html;
+jsonData.forEach(item => {
+  const row = document.createElement("tr");
+
+  const nameCell = document.createElement("td");
+  nameCell.textContent = item.Name;
+  row.appendChild(nameCell);
+
+  const emailCell = document.createElement("td");
+  emailCell.textContent = item.Email;
+  row.appendChild(emailCell);
+
+  const actionsCell = document.createElement("td");
+  item.Actions.forEach(action => {
+    const button = document.createElement("button");
+    button.textContent = action;
+    button.classList.add(action.toLowerCase());
+    actionsCell.appendChild(button);
+  });
+  row.appendChild(actionsCell);
+
+  tableBody.appendChild(row);
+});
+
+document.getElementById('customers').appendChild(htmlElement);

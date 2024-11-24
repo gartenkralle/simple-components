@@ -1,20 +1,26 @@
-export async function loadTable(element, jsonData){    
+export async function loadTable(jsonData, headerData, targetElement){
     const tempDiv = document.createElement('div');
         
     tempDiv.innerHTML = /*html*/
        `<table>
             <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
             </thead>
             <tbody>
             </tbody>
         </table>`;
 
     const htmlElement = tempDiv.firstChild;
+
+    const tableHead = htmlElement.querySelector("thead");
+    const row = document.createElement("tr");
+
+    headerData.forEach(item => {
+        const headerCell = document.createElement("th");
+        headerCell.textContent = item;
+        row.appendChild(headerCell);
+
+        tableHead.appendChild(row);
+    });
 
     const tableBody = htmlElement.querySelector("tbody");
 
@@ -36,5 +42,5 @@ export async function loadTable(element, jsonData){
         tableBody.appendChild(row);
     });
 
-    element.appendChild(htmlElement);
+    targetElement.appendChild(htmlElement);
 }

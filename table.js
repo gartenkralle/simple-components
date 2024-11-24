@@ -1,5 +1,7 @@
 async function loadTable(element, jsonData){    
-    const htmlElement = await loadHtml(/*html*/
+    const tempDiv = document.createElement('div');
+        
+    tempDiv.innerHTML = /*html*/
        `<table>
             <thead>
             <tr>
@@ -10,12 +12,11 @@ async function loadTable(element, jsonData){
             </thead>
             <tbody>
             </tbody>
-        </table>`
-    );
+        </table>`;
+
+    const htmlElement = tempDiv.firstChild;
 
     const tableBody = htmlElement.querySelector("tbody");
-        
-    tableBody.innerHTML = '';
 
     jsonData.forEach(item => {
         const row = document.createElement("tr");

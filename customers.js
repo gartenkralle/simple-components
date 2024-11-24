@@ -1,6 +1,6 @@
 import { loadHtml } from './common.js';
 
-export async function loadTable(path, id, jsonData){
+export async function loadTable(path, element, jsonData){
     let htmlElement = await loadHtml(path);
 
     const tableBody = htmlElement.querySelector("tbody");
@@ -30,5 +30,5 @@ export async function loadTable(path, id, jsonData){
         tableBody.appendChild(row);
     });
 
-    document.getElementById(id).appendChild(htmlElement);
+    element.appendChild(htmlElement);
 }

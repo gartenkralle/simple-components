@@ -1,8 +1,6 @@
-async function initialize(){
-    const jsonData = await (await fetch('test.json')).json();
+import { loadTable } from "./table.js";
 
-    loadTable(document.getElementById('customers'), jsonData);
-    loadTable(document.getElementById('customers-2'), jsonData);
-}
+const jsonData = await (await fetch('test.json')).json();
 
-initialize();
+await loadTable(document.getElementById('customers'), jsonData);
+await loadTable(document.getElementById('customers-2'), jsonData);

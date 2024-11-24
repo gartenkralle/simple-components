@@ -1,4 +1,4 @@
-async function loadTable(element, jsonData){    
+export async function loadTable(element, jsonData){    
     const tempDiv = document.createElement('div');
         
     tempDiv.innerHTML = /*html*/

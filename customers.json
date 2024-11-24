@@ -2,27 +2,27 @@
     {
       "Name": "John Doe",
       "Email": "john.doe@example.com",
-      "Action": "Edit"
+      "Salary": "10.000"
     },
     {
       "Name": "Jane Smith",
       "Email": "jane.smith@example.com",
-      "Action": "View"
+      "Salary": "15.000"
     },
     {
       "Name": "Alice Johnson",
       "Email": "alice.johnson@example.com",
-      "Action": "Delete"
+      "Salary": "22.000"
     },
     {
       "Name": "Bob Brown",
       "Email": "bob.brown@example.com",
-      "Action": "Edit"
+      "Salary": "33.000"
     },
     {
       "Name": "Charlie White",
       "Email": "charlie.white@example.com",
-      "Action": "View"
+      "Salary": "90.000"
     }
   ]
   

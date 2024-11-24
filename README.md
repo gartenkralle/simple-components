@@ -12,10 +12,8 @@ const targetElement = document.getElementById('customers');
 
 await loadTable(jsonData, headerData, targetElement);
 ```
-## cdn
-```
+## CDN
+
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.js)
-```
-```
+
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.css)
-```

@@ -27,17 +27,11 @@ export async function loadTable(jsonData, headerData, targetElement){
     jsonData.forEach(item => {
         const row = document.createElement("tr");
 
-        const nameCell = document.createElement("td");
-        nameCell.textContent = item.Name;
-        row.appendChild(nameCell);
-
-        const emailCell = document.createElement("td");
-        emailCell.textContent = item.Email;
-        row.appendChild(emailCell);
-
-        const actionsCell = document.createElement("td");
-        actionsCell.textContent = item.Actions
-        row.appendChild(actionsCell);
+        Object.keys(item).forEach(column =>{
+            const cellData = document.createElement("td");
+            cellData.textContent = item[column];
+            row.appendChild(cellData);
+        });
 
         tableBody.appendChild(row);
     });

@@ -2,27 +2,27 @@
     {
       "Name": "John Doe",
       "Email": "john.doe@example.com",
-      "Actions": ["Edit", "Delete"]
+      "Actions": "Edit"
     },
     {
       "Name": "Jane Smith",
       "Email": "jane.smith@example.com",
-      "Actions": ["View", "Edit"]
+      "Actions": "View"
     },
     {
       "Name": "Alice Johnson",
       "Email": "alice.johnson@example.com",
-      "Actions": ["Delete"]
+      "Actions": "Delete"
     },
     {
       "Name": "Bob Brown",
       "Email": "bob.brown@example.com",
-      "Actions": ["Edit", "View"]
+      "Actions": "Edit"
     },
     {
       "Name": "Charlie White",
       "Email": "charlie.white@example.com",
-      "Actions": ["View"]
+      "Actions": "View"
     }
   ]
   

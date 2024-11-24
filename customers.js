@@ -2,17 +2,37 @@ import { loadHtml } from './common.js';
 
 export async function loadTable(element, jsonData){
     let htmlElement = await loadHtml(/*html*/
-       `<table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>`
+       `<div>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <style>
+                td,
+                th {
+                padding: 0.4rem;
+                }
+
+                th {
+                text-align: left;
+                }
+
+                button {
+                margin: 0.2rem;
+                padding: 0.4rem;
+                }
+            </style>
+
+        </div>`
     );
 
     const tableBody = htmlElement.querySelector("tbody");
@@ -31,12 +51,7 @@ export async function loadTable(element, jsonData){
         row.appendChild(emailCell);
 
         const actionsCell = document.createElement("td");
-        item.Actions.forEach(action => {
-            const button = document.createElement("button");
-            button.textContent = action;
-            button.classList.add(action.toLowerCase());
-            actionsCell.appendChild(button);
-        });
+        actionsCell.textContent = item.Actions
         row.appendChild(actionsCell);
 
         tableBody.appendChild(row);

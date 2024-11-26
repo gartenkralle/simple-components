@@ -1,13 +1,16 @@
 import { loadTable } from "/components/table.js";
+{
+  const headerData = ["Name", "Email", "Salary"];
+  const jsonData = await (await fetch("customers.json")).json();
+  const targetElement = document.getElementById("customerTable");
 
-const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("customers.json")).json();
-const targetElement = document.getElementById("customers");
-
-await loadTable(jsonData, headerData, targetElement);
+  await loadTable(jsonData, headerData, targetElement);
+}
 
 import { loadModal } from "/components/modal.js";
+{
+  const sourceElement = document.getElementById("modalButton");
+  const targetElement = document.getElementById("myModal");
 
-const sourceElement = document.getElementById("modalButton");
-
-loadModal(sourceElement);
+  loadModal(sourceElement, targetElement);
+}

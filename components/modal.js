@@ -1,14 +1,16 @@
-const modal = document.getElementById("myModal");
+let modal;
 
-export function loadModal(sourceElement) {
+export function loadModal(sourceElement, targetElement) {
+  modal = targetElement;
+
   sourceElement.addEventListener("click", () => {
-    modal.style.display = "block";
-    modal.classList.remove("fade-out");
-    modal.classList.add("fade-in");
+    targetElement.style.display = "block";
+    targetElement.classList.remove("fade-out");
+    targetElement.classList.add("fade-in");
   });
 
   window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    if (event.target === targetElement) {
       closeModal();
     }
   });

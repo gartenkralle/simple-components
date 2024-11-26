@@ -1,3 +1,7 @@
+:root {
+  font-family: "Arial", sans-serif;
+}
+
 /* Modal container */
 .modal {
   display: none;

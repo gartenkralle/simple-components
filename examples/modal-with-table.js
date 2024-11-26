@@ -2,7 +2,7 @@ import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("customers.json")).json();
+const jsonData = await (await fetch("data/customers.json")).json();
 const targetElement = document.getElementById("table-modal");
 const sourceElement = document.getElementById("table-modal-button");
 

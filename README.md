@@ -2,13 +2,13 @@
 
 ## Table
 
-![Class diagram](table.png)
+![Class diagram](images/table.png)
 
 ```
 import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("customers.json")).json();
+const jsonData = await (await fetch("data/customers.json")).json();
 const targetElement = document.getElementById("customer-table");
 
 const table = new Table();
@@ -17,7 +17,7 @@ table.load(jsonData, headerData, targetElement);
 
 ## Modal
 
-![Class diagram](modal.png)
+![Class diagram](images/modal.png)
 
 ```
 import { Modal } from "/components/modal.js";
@@ -31,14 +31,14 @@ modal.load(sourceElement, targetElement);
 
 ## Modal with Table
 
-![Class diagram](modal-with-table.png)
+![Class diagram](images/modal-with-table.png)
 
 ```
 import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("customers.json")).json();
+const jsonData = await (await fetch("data/customers.json")).json();
 const targetElement = document.getElementById("table-modal");
 const sourceElement = document.getElementById("table-modal-button");
 

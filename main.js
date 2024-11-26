@@ -10,7 +10,7 @@ import { loadTable } from "/components/table.js";
 import { loadModal } from "/components/modal.js";
 {
   const sourceElement = document.getElementById("modal-button");
-  const targetElement = document.getElementById("myModal");
+  const targetElement = document.getElementById("text-modal");
 
   loadModal(sourceElement, targetElement);
 }

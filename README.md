@@ -58,6 +58,6 @@ modal.load(sourceElement, targetElement);
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css)

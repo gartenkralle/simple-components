@@ -1,16 +1,30 @@
 let modal;
 
 export function loadModal(sourceElement, targetElement) {
-  modal = targetElement;
+  const template = document.createElement("div");
+
+  template.innerHTML =
+    /*html*/
+    `<div class="modal">
+       <div class="modal-content">
+       </div>
+     </div>`;
+
+  modal = template.firstChild;
+
+  modal.querySelector(".modal-content").innerHTML = targetElement.innerHTML;
+  targetElement.innerHTML = "";
+
+  targetElement.appendChild(modal);
 
   sourceElement.addEventListener("click", () => {
-    targetElement.style.display = "block";
-    targetElement.classList.remove("fade-out");
-    targetElement.classList.add("fade-in");
+    modal.style.display = "block";
+    modal.classList.remove("fade-out");
+    modal.classList.add("fade-in");
   });
 
   window.addEventListener("click", (event) => {
-    if (event.target === targetElement) {
+    if (event.target === modal) {
       closeModal();
     }
   });

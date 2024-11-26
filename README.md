@@ -1,8 +1,10 @@
-# simple-table
-
-![Class diagram](table.png)
+# simple-components
 
 ## Usage
+
+### Table
+
+![Class diagram](table.png)
 
 ```
 import { Table } from "/components/table.js";
@@ -16,6 +18,10 @@ table.load(jsonData, headerData, targetElement);
 
 ```
 
+### Modal
+
+![Class diagram](modal.png)
+
 ```
 import { Modal } from "/components/modal.js";
 
@@ -26,6 +32,10 @@ const modal = new Modal();
 modal.load(sourceElement, targetElement);
 
 ```
+
+### Modal with Table
+
+![Class diagram](modal-with-table.png)
 
 ```
 import { Table } from "/components/table.js";

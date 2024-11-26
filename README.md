@@ -13,7 +13,6 @@ const targetElement = document.getElementById("customer-table");
 
 const table = new Table();
 table.load(jsonData, headerData, targetElement);
-
 ```
 
 ## Modal
@@ -28,7 +27,6 @@ const targetElement = document.getElementById("text-modal");
 
 const modal = new Modal();
 modal.load(sourceElement, targetElement);
-
 ```
 
 ## Modal with Table
@@ -49,11 +47,14 @@ table.load(jsonData, headerData, targetElement);
 
 const modal = new Modal();
 modal.load(sourceElement, targetElement);
-
 ```
 
 ## CDN
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.js)
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.0/table.min.js)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.0/table.min.js]
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.js)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.js]
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.js)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.js]
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.2/table.css)
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.min.css)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.min.css]
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.css)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.css]
+(https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.css)[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.css]

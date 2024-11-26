@@ -51,12 +51,12 @@ modal.load(sourceElement, targetElement);
 
 ## CDN
 
-# JS
+### JS
 
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.js)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.js)
 
-# CSS
+### CSS
 
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css)

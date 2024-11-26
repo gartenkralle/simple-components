@@ -5,5 +5,3 @@ const targetElement = document.getElementById("text-modal");
 
 const modal = new Modal();
 modal.load(sourceElement, targetElement);
-
-//loadModal(sourceElement, targetElement);

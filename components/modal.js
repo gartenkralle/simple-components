@@ -15,8 +15,7 @@ export class Modal {
 
     this.modal = template.firstChild;
 
-    this.modal.querySelector(".modal-content").innerHTML =
-      targetElement.innerHTML;
+    this.modal.querySelector(".modal-content").innerHTML = targetElement.innerHTML;
     targetElement.innerHTML = "";
 
     targetElement.appendChild(this.modal);
@@ -42,10 +41,7 @@ export class Modal {
       this.modal.classList.remove("fade-in");
       this.modal.classList.add("fade-out");
 
-      this.modal.addEventListener(
-        "animationend",
-        this.handleAnimationEnd.bind(this)
-      );
+      this.modal.addEventListener("animationend", this.handleAnimationEnd.bind(this));
     }
   }
 
@@ -54,10 +50,7 @@ export class Modal {
       this.modal.style.display = "none";
       this.modal.classList.remove("fade-out");
 
-      this.modal.removeEventListener(
-        "animationend",
-        this.handleAnimationEnd.bind(this)
-      );
+      this.modal.removeEventListener("animationend", this.handleAnimationEnd.bind(this));
     }
   }
 }

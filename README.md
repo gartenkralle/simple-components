@@ -1,8 +1,6 @@
 # simple-components
 
-## Usage
-
-### Table
+## Table
 
 ![Class diagram](table.png)
 
@@ -18,7 +16,7 @@ table.load(jsonData, headerData, targetElement);
 
 ```
 
-### Modal
+## Modal
 
 ![Class diagram](modal.png)
 
@@ -33,7 +31,7 @@ modal.load(sourceElement, targetElement);
 
 ```
 
-### Modal with Table
+## Modal with Table
 
 ![Class diagram](modal-with-table.png)
 

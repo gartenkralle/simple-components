@@ -51,10 +51,9 @@ modal.load(sourceElement, targetElement);
 
 ## CDN
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.0/table.min.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-table@1.0.0/table.min.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.js)
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.min.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.min.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.min.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.min.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.3/components/table.css)

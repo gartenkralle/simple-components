@@ -7,7 +7,7 @@ table {
   border-collapse: collapse;
   background-color: #ffffff;
   text-align: left;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
   color: #333;
 }
@@ -55,9 +55,4 @@ tbody tr:nth-child(odd) {
 
 .table-container::-webkit-scrollbar-thumb:hover {
   background: #999;
-}
-
-table {
-  border-radius: 8px;
-  overflow: hidden;
 }

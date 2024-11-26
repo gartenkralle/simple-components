@@ -1,41 +1,52 @@
-export async function loadTable(jsonData, headerData, targetElement) {
-  const template = document.createElement("div");
+export class Table {
+  constructor() {
+    this.table = null;
+  }
 
-  template.innerHTML =
-    /*html*/
-    `<table>
-            <thead>
-            </thead>
-            <tbody>
-            </tbody>
-     </table>`;
+  async load(jsonData, headerData, targetElement) {
+    const template = document.createElement("div");
 
-  const htmlElement = template.firstChild;
+    template.innerHTML =
+      /*html*/
+      `<table>
+        <thead></thead>
+        <tbody></tbody>
+      </table>`;
 
-  const tableHead = htmlElement.querySelector("thead");
-  const row = document.createElement("tr");
+    this.table = template.firstChild;
 
-  headerData.forEach((item) => {
-    const headerCell = document.createElement("th");
-    headerCell.textContent = item;
-    row.appendChild(headerCell);
+    this.#populateHeaders(headerData);
+    this.#populateBody(jsonData);
 
-    tableHead.appendChild(row);
-  });
+    targetElement.appendChild(this.table);
+  }
 
-  const tableBody = htmlElement.querySelector("tbody");
+  #populateHeaders(headerData) {
+    const tableHead = this.table.querySelector("thead");
+    const headerRow = document.createElement("tr");
 
-  jsonData.forEach((item) => {
-    const row = document.createElement("tr");
-
-    Object.keys(item).forEach((column) => {
-      const cellData = document.createElement("td");
-      cellData.textContent = item[column];
-      row.appendChild(cellData);
+    headerData.forEach((headerText) => {
+      const headerCell = document.createElement("th");
+      headerCell.textContent = headerText;
+      headerRow.appendChild(headerCell);
     });
 
-    tableBody.appendChild(row);
-  });
+    tableHead.appendChild(headerRow);
+  }
 
-  targetElement.appendChild(htmlElement);
+  #populateBody(jsonData) {
+    const tableBody = this.table.querySelector("tbody");
+
+    jsonData.forEach((rowData) => {
+      const row = document.createElement("tr");
+
+      Object.values(rowData).forEach((cellValue) => {
+        const cell = document.createElement("td");
+        cell.textContent = cellValue;
+        row.appendChild(cell);
+      });
+
+      tableBody.appendChild(row);
+    });
+  }
 }

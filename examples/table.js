@@ -1,7 +1,8 @@
-import { loadTable } from "/components/table.js";
+import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
 const jsonData = await (await fetch("customers.json")).json();
 const targetElement = document.getElementById("customer-table");
 
-await loadTable(jsonData, headerData, targetElement);
+const table = new Table();
+table.load(jsonData, headerData, targetElement);

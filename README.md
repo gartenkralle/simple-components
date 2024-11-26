@@ -4,7 +4,8 @@
 
 ![Class diagram](images/table.png)
 
-```import { Table } from "/components/table.js";
+```javascript
+import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
 const jsonData = await (await fetch("data/customers.json")).json();
@@ -18,7 +19,8 @@ table.load(jsonData, headerData, targetElement);
 
 ![Class diagram](images/modal.png)
 
-```import { Modal } from "/components/modal.js";
+```javascript
+import { Modal } from "/components/modal.js";
 
 const sourceElement = document.getElementById("text-modal-button");
 const targetElement = document.getElementById("text-modal");
@@ -31,7 +33,8 @@ modal.load(sourceElement, targetElement);
 
 ![Class diagram](images/modal-with-table.png)
 
-```import { Table } from "/components/table.js";
+```javascript
+import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];

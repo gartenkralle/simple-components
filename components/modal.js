@@ -1,56 +1,57 @@
 export class Modal {
   constructor() {
-    this.modal = null;
-  }
+    this.htmlElements = [];
 
-  load(sourceElement, targetElement) {
-    const template = document.createElement("div");
+    this.htmlElement = document.createElement("div");
 
-    template.innerHTML =
+    this.htmlElement.innerHTML =
       /*html*/
       `<div class="modal">
            <div class="modal-content">
            </div>
-         </div>`;
+       </div>`;
 
-    this.modal = template.firstChild;
+    this.htmlElement = this.htmlElement.firstChild;
+  }
 
-    this.modal.querySelector(".modal-content").innerHTML = targetElement.innerHTML;
-    targetElement.innerHTML = "";
+  add(htmlElement) {
+    this.htmlElements.push(htmlElement);
+  }
 
-    targetElement.appendChild(this.modal);
+  show(sourceElement) {
+    const modalContent = this.htmlElement.querySelector(".modal-content");
 
-    sourceElement.addEventListener("click", () => this.show());
+    this.htmlElements.forEach((htmlElement) => {
+      modalContent.appendChild(htmlElement);
+    });
+
+    document.body.appendChild(this.htmlElement);
+
+    sourceElement.addEventListener("click", () => {
+      if (this.htmlElement) {
+        this.htmlElement.style.display = "block";
+        this.htmlElement.classList.remove("fade-out");
+        this.htmlElement.classList.add("fade-in");
+      }
+    });
     window.addEventListener("click", (event) => {
-      if (event.target === this.modal) {
-        this.close();
+      if (event.target === this.htmlElement) {
+        if (this.htmlElement) {
+          this.htmlElement.classList.remove("fade-in");
+          this.htmlElement.classList.add("fade-out");
+
+          this.htmlElement.addEventListener("animationend", this.handleAnimationEnd.bind(this));
+        }
       }
     });
   }
 
-  show() {
-    if (this.modal) {
-      this.modal.style.display = "block";
-      this.modal.classList.remove("fade-out");
-      this.modal.classList.add("fade-in");
-    }
-  }
-
-  close() {
-    if (this.modal) {
-      this.modal.classList.remove("fade-in");
-      this.modal.classList.add("fade-out");
-
-      this.modal.addEventListener("animationend", this.handleAnimationEnd.bind(this));
-    }
-  }
-
   handleAnimationEnd(event) {
     if (event.animationName === "fadeOut") {
-      this.modal.style.display = "none";
-      this.modal.classList.remove("fade-out");
+      this.htmlElement.style.display = "none";
+      this.htmlElement.classList.remove("fade-out");
 
-      this.modal.removeEventListener("animationend", this.handleAnimationEnd.bind(this));
+      this.htmlElement.removeEventListener("animationend", this.handleAnimationEnd.bind(this));
     }
   }
 }

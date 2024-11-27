@@ -1,7 +1,19 @@
+import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
-const sourceElement = document.getElementById("text-modal-button");
-const targetElement = document.getElementById("text-modal");
+const headerData = ["Name", "Email", "Salary"];
+const response = await fetch("data/customers.json");
+const jsonData = await response.json();
 
+const sourceElement = document.getElementById("modal-button");
+
+const table = new Table(jsonData, headerData);
 const modal = new Modal();
-modal.load(sourceElement, targetElement);
+
+const button = document.createElement('button');
+button.innerText = "Button inside modal";
+
+modal.add(table.htmlElement);
+modal.add(button);
+
+modal.show(sourceElement);

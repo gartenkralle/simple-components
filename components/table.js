@@ -1,28 +1,29 @@
 export class Table {
-  constructor() {
-    this.table = null;
-  }
+  constructor(jsonData, headerData) {
+    this.jsonData = jsonData;
+    this.headerData = headerData;
 
-  async load(jsonData, headerData, targetElement) {
-    const template = document.createElement("div");
+    this.htmlElement = document.createElement("div");
 
-    template.innerHTML =
+    this.htmlElement.innerHTML =
       /*html*/
       `<table>
-        <thead></thead>
-        <tbody></tbody>
-      </table>`;
+           <thead></thead>
+           <tbody></tbody>
+       </table>`;
 
-    this.table = template.firstChild;
+    this.htmlElement = this.htmlElement.firstChild;
 
-    this.#populateHeaders(headerData);
-    this.#populateBody(jsonData);
+    this.#populateHeaders(this.headerData);
+    this.#populateBody(this.jsonData);
+  }
 
-    targetElement.appendChild(this.table);
+  async show(targetElement) {
+    targetElement.appendChild(this.htmlElement);
   }
 
   #populateHeaders(headerData) {
-    const tableHead = this.table.querySelector("thead");
+    const tableHead = this.htmlElement.querySelector("thead");
     const headerRow = document.createElement("tr");
 
     headerData.forEach((headerText) => {
@@ -35,7 +36,7 @@ export class Table {
   }
 
   #populateBody(jsonData) {
-    const tableBody = this.table.querySelector("tbody");
+    const tableBody = this.htmlElement.querySelector("tbody");
 
     jsonData.forEach((rowData) => {
       const row = document.createElement("tr");

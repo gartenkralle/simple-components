@@ -18,7 +18,7 @@ export class Modal {
     this.htmlElements.push(htmlElement);
   }
 
-  show(sourceElement) {
+  connect(sourceElement) {
     const modalContent = this.htmlElement.querySelector(".modal-content");
 
     this.htmlElements.forEach((htmlElement) => {

@@ -16,4 +16,4 @@ button.innerText = "Button inside modal";
 modal.add(table.htmlElement);
 modal.add(button);
 
-modal.show(sourceElement);
+modal.connect(sourceElement);

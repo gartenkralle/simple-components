@@ -40,18 +40,18 @@ button.innerText = "Button inside modal";
 modal.add(table.htmlElement);
 modal.add(button);
 
-modal.show(sourceElement);
+modal.connect(sourceElement);
 ```
 
 ## CDN
 
 ### JS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/table.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/modal.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.js)
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/table.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/modal.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.4/components/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/button.css)

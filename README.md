@@ -8,11 +8,13 @@
 import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("data/customers.json")).json();
+const response = await fetch("data/customers.json");
+const jsonData = await response.json();
+
 const targetElement = document.getElementById("customer-table");
 
-const table = new Table();
-table.load(jsonData, headerData, targetElement);
+const table = new Table(jsonData, headerData);
+table.show(targetElement);
 ```
 
 ## Modal
@@ -20,33 +22,25 @@ table.load(jsonData, headerData, targetElement);
 ![Class diagram](images/modal.png)
 
 ```javascript
-import { Modal } from "/components/modal.js";
-
-const sourceElement = document.getElementById("text-modal-button");
-const targetElement = document.getElementById("text-modal");
-
-const modal = new Modal();
-modal.load(sourceElement, targetElement);
-```
-
-## Modal with Table
-
-![Class diagram](images/modal-with-table.png)
-
-```javascript
 import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
-const jsonData = await (await fetch("data/customers.json")).json();
-const targetElement = document.getElementById("table-modal");
-const sourceElement = document.getElementById("table-modal-button");
+const response = await fetch("data/customers.json");
+const jsonData = await response.json();
 
-const table = new Table();
-table.load(jsonData, headerData, targetElement);
+const sourceElement = document.getElementById("modal-button");
 
+const table = new Table(jsonData, headerData);
 const modal = new Modal();
-modal.load(sourceElement, targetElement);
+
+const button = document.createElement("button");
+button.innerText = "Button inside modal";
+
+modal.add(table.htmlElement);
+modal.add(button);
+
+modal.show(sourceElement);
 ```
 
 ## CDN

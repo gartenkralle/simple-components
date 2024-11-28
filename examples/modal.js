@@ -9,10 +9,12 @@ const bodyData = await response.json();
 const targetElement = document.querySelector("#modal-button");
 
 const table = new Table(headerData, bodyData);
-const modal = new Modal(targetElement);
+const modal = new Modal();
 
 const button = document.createElement('button');
 button.innerText = "Button inside modal";
 
 modal.add(table.htmlElement);
 modal.add(button);
+
+modal.show(targetElement)

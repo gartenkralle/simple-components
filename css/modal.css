@@ -25,6 +25,7 @@
   transform: translateY(0);
   opacity: 1;
   animation-fill-mode: forwards;
+  font-weight: normal;
 }
 
 .modal.fade-in {

@@ -1,5 +1,5 @@
 export class Modal {
-  constructor(targetElement) {
+  constructor() {
     this.htmlElement = document.createElement("div");
     this.htmlElement.classList.add("modal");
 
@@ -9,12 +9,6 @@ export class Modal {
     this.htmlElement.appendChild(modalContent);
 
     document.body.appendChild(this.htmlElement);
-
-    targetElement.addEventListener("click", () => {
-      this.htmlElement.style.display = "block";
-      this.htmlElement.classList.remove("fade-out");
-      this.htmlElement.classList.add("fade-in");
-    });
 
     window.addEventListener("click", (e) => {
       if (e.target === this.htmlElement) {
@@ -33,5 +27,15 @@ export class Modal {
 
   add(htmlElement) {
     this.htmlElement.querySelector(".modal-content").appendChild(htmlElement);
+  }
+
+  show(targetElement) {
+    targetElement.addEventListener("click", () => {
+      this.htmlElement.style.display = "block";
+      this.htmlElement.classList.remove("fade-out");
+      this.htmlElement.classList.add("fade-in");
+    });
+
+    targetElement.appendChild(this.htmlElement);
   }
 }

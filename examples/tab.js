@@ -12,10 +12,8 @@ const addressTable = new Table(headerData, bodyData);
 
 const targetElement = document.querySelector("#tab-view");
 
-const tab = new Tab();
+const tab = new Tab(targetElement);
 
-tab.add('Customers', customerTable.htmlElement);
 tab.add('Orders', orderTable.htmlElement);
+tab.add('Customers', customerTable.htmlElement);
 tab.add('Addresses', addressTable.htmlElement);
-
-tab.show(targetElement);

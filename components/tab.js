@@ -1,5 +1,5 @@
 export class Tab {
-  constructor() {
+  constructor(targetElement) {
     this.htmlElementsMap = new Map();
 
     this.htmlElement = document.createElement("div");
@@ -13,6 +13,8 @@ export class Tab {
 
     this.htmlElement.appendChild(nav);
     this.htmlElement.appendChild(content);
+
+    targetElement.appendChild(this.htmlElement);
   }
 
   add(tabName, htmlElement) {
@@ -40,10 +42,7 @@ export class Tab {
       const content = this.htmlElementsMap.get(e.target);
       this.htmlElement.querySelector(".tab-content").appendChild(content);
     });
-  }
 
-  show(targetElement) {
     this.htmlElement.querySelector(".tab-link").classList.add("active");
-    targetElement.appendChild(this.htmlElement);
   }
 }

@@ -1,15 +1,15 @@
 .tab-container {
   width: 100%;
-  max-width: 600px;
+
   background: #ffffff;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
 .tab-nav {
   display: flex;
   border-bottom: 1px solid #eaeaea;
+  margin-bottom: 16px;
 }
 
 .tab-link {

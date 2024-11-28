@@ -1,4 +1,8 @@
-button,
-table {
-  margin-bottom: 10px;
+body > button,
+body > div > table {
+  margin-bottom: 50px;
+}
+
+.modal-content > table {
+  margin-bottom: 20px;
 }

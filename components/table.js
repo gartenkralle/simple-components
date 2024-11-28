@@ -1,21 +1,18 @@
 export class Table {
-  constructor(jsonData, headerData) {
-    this.jsonData = jsonData;
+  constructor(headerData, bodyData) {
+    this.bodyData = bodyData;
     this.headerData = headerData;
 
-    this.htmlElement = document.createElement("div");
+    this.htmlElement = document.createElement("table");
 
-    this.htmlElement.innerHTML =
-      /*html*/
-      `<table>
-           <thead></thead>
-           <tbody></tbody>
-       </table>`;
+    const header = document.createElement("thead");
+    const body = document.createElement("tbody");
 
-    this.htmlElement = this.htmlElement.firstChild;
+    this.htmlElement.appendChild(header);
+    this.htmlElement.appendChild(body);
 
     this.#populateHeaders(this.headerData);
-    this.#populateBody(this.jsonData);
+    this.#populateBody(this.bodyData);
   }
 
   async show(targetElement) {

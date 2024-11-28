@@ -2,12 +2,13 @@ import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
+
 const response = await fetch("data/customers.json");
-const jsonData = await response.json();
+const bodyData = await response.json();
 
 const sourceElement = document.getElementById("modal-button");
 
-const table = new Table(jsonData, headerData);
+const table = new Table(headerData, bodyData);
 const modal = new Modal();
 
 const button = document.createElement('button');

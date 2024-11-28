@@ -8,12 +8,13 @@
 import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
+
 const response = await fetch("data/customers.json");
-const jsonData = await response.json();
+const bodyData = await response.json();
 
 const targetElement = document.getElementById("customer-table");
 
-const table = new Table(jsonData, headerData);
+const table = new Table(bodyData, headerData);
 table.show(targetElement);
 ```
 
@@ -26,12 +27,13 @@ import { Table } from "/components/table.js";
 import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
+
 const response = await fetch("data/customers.json");
-const jsonData = await response.json();
+const bodyData = await response.json();
 
 const sourceElement = document.getElementById("modal-button");
 
-const table = new Table(jsonData, headerData);
+const table = new Table(headerData, bodyData);
 const modal = new Modal();
 
 const button = document.createElement("button");
@@ -47,11 +49,11 @@ modal.connect(sourceElement);
 
 ### JS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/table.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/modal.js)
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/table.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/modal.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.5/components/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.6/components/button.css)

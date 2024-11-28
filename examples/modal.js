@@ -6,10 +6,10 @@ const headerData = ["Name", "Email", "Salary"];
 const response = await fetch("data/customers.json");
 const bodyData = await response.json();
 
-const sourceElement = document.getElementById("modal-button");
+const targetElement = document.getElementById("modal-button");
 
 const table = new Table(headerData, bodyData);
-const modal = new Modal(sourceElement);
+const modal = new Modal(targetElement);
 
 const button = document.createElement('button');
 button.innerText = "Button inside modal";

@@ -20,7 +20,7 @@ table.show(targetElement);
 
 ## Modal
 
-![Class diagram](images/modal-2.png)
+![Class diagram](images/modal.png)
 
 ```javascript
 import { Table } from "/components/table.js";

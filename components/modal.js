@@ -29,13 +29,13 @@ export class Modal {
     this.htmlElement.querySelector(".modal-content").appendChild(htmlElement);
   }
 
-  show(targetElement) {
-    targetElement.addEventListener("click", () => {
+  connect(sourceElement) {
+    sourceElement.addEventListener("click", () => {
       this.htmlElement.style.display = "block";
       this.htmlElement.classList.remove("fade-out");
       this.htmlElement.classList.add("fade-in");
     });
 
-    targetElement.appendChild(this.htmlElement);
+    sourceElement.appendChild(this.htmlElement);
   }
 }

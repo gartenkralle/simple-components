@@ -6,7 +6,7 @@ const headerData = ["Name", "Email", "Salary"];
 const response = await fetch("data/customers.json");
 const bodyData = await response.json();
 
-const targetElement = document.querySelector("#modal-button");
+const sourceElement = document.querySelector("#modal-button");
 
 const table = new Table(headerData, bodyData);
 const modal = new Modal();
@@ -17,4 +17,4 @@ button.innerText = "Button inside modal";
 modal.add(table.htmlElement);
 modal.add(button);
 
-modal.show(targetElement)
+modal.connect(sourceElement);

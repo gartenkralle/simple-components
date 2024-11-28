@@ -8,7 +8,11 @@ export class Tab {
     const nav = document.createElement("nav");
     nav.classList.add("tab-nav");
 
+    const content = document.createElement("div");
+    content.classList.add("tab-content");
+
     this.htmlElement.appendChild(nav);
+    this.htmlElement.appendChild(content);
   }
 
   add(tabName, htmlElement) {
@@ -31,8 +35,10 @@ export class Tab {
 
       e.target.classList.add("active");
 
+      this.htmlElement.querySelector(".tab-content").replaceChildren();
+
       const content = this.htmlElementsMap.get(e.target);
-      this.htmlElement.parentNode.appendChild(content);
+      this.htmlElement.querySelector(".tab-content").appendChild(content);
     });
   }
 

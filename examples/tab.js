@@ -10,7 +10,7 @@ const customerTable = new Table(headerData, bodyData);
 const orderTable = new Table(headerData, bodyData);
 const addressTable = new Table(headerData, bodyData);
 
-const targetElement = document.getElementById("tab-view");
+const targetElement = document.querySelector("#tab-view");
 
 const tab = new Tab();
 

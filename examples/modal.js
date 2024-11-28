@@ -9,12 +9,10 @@ const bodyData = await response.json();
 const sourceElement = document.getElementById("modal-button");
 
 const table = new Table(headerData, bodyData);
-const modal = new Modal();
+const modal = new Modal(sourceElement);
 
 const button = document.createElement('button');
 button.innerText = "Button inside modal";
 
 modal.add(table.htmlElement);
 modal.add(button);
-
-modal.connect(sourceElement);

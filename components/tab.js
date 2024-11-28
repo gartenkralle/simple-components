@@ -45,6 +45,11 @@ export class Tab {
   }
 
   show(targetElement) {
+    const activeLink = this.htmlElement.querySelector(".tab-link.active");
+    const content = this.htmlElementsMap.get(activeLink);
+    
+    this.htmlElement.querySelector(".tab-content").appendChild(content);
+
     targetElement.appendChild(this.htmlElement);
   }
 }

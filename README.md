@@ -36,7 +36,7 @@ const sourceElement = document.querySelector("#modal-button");
 const table = new Table(headerData, bodyData);
 const modal = new Modal();
 
-const button = document.createElement('button');
+const button = document.createElement("button");
 button.innerText = "Button inside modal";
 
 modal.add(table.htmlElement);
@@ -90,6 +90,6 @@ tab.show(targetElement);
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/table.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/modal.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/components/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.0.7/css/button.css)

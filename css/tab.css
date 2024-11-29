@@ -1,6 +1,10 @@
-.tab-container {
-  width: 100%;
+:root {
+  --font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+}
 
+.tab-container {
+  font-family: var(--font-family);
+  width: 100%;
   background: #ffffff;
   border-radius: 8px;
   overflow: hidden;

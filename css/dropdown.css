@@ -1,13 +1,29 @@
+:root {
+  --font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+}
+
 .dropdown {
+  font-family: var(--font-family);
   position: relative;
   display: inline-block;
   width: 170px;
 }
 
 .dropdown-button {
+  font-family: var(--font-family);
   width: 100%;
   padding: 10px 20px;
   display: flex;
+  background: #4f46e5;
+  color: #fff;
+  border: transparent;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background: #6366f1;
 }
 
 .dropdown-button::after {

@@ -83,7 +83,7 @@ tab.show(targetElement);
 
 ## Dropdown
 
-![Class diagram](images/dropdown.png)
+![Class diagram](images/button.png)
 
 ```javascript
 import { Dropdown} from '/components/dropdown.js'

@@ -18,7 +18,7 @@ const orderTable = new Table(orderHeaderData, orderBodyData);
 const customerTable = new Table(customerHeaderData, customerBodyData);
 const addressTable = new Table(addressHeaderData, addressBodyData);
 
-const targetElement = document.querySelector("#tab-view");
+const targetElement = document.querySelector("#tab-example");
 
 const tab = new Tab();
 

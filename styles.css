@@ -1,5 +1,6 @@
 body > button,
-body > div > table {
+body > div > table,
+#tab-example {
   margin-bottom: 50px;
 }
 

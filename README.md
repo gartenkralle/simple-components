@@ -1,3 +1,5 @@
+[![](https://data.jsdelivr.com/v1/package/gh/gartenkralle/simple-components/badge?style=rounded)](https://www.jsdelivr.com/package/gh/gartenkralle/simple-components)
+
 # simple-components
 
 ## Table

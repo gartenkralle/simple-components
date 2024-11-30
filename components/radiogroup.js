@@ -5,6 +5,7 @@ export class Radiogroup {
 
   add(name, value) {
     const container = document.createElement("div");
+    container.classList.add("radio-group-item");
 
     const input = document.createElement("input");
     input.type = "radio";

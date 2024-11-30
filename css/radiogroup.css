@@ -16,6 +16,16 @@ label {
   font-size: 0.875rem;
 }
 
+.radio-group-item {
+    margin:20px;
+  align-items: center;
+  display: flex;
+}
+
+.radio-group-item > input{
+    margin: 0;
+}
+
 fieldset {
   border: none;
 }

@@ -2,6 +2,20 @@
 
 # simple-components
 
+## Button
+
+![Class diagram](images/button.png)
+
+```javascript
+import { Button } from "/components/button.js";
+
+const button = new Button("Button example");
+
+const targetElement = document.querySelector("#button-example");
+
+button.show(targetElement);
+```
+
 ## Table
 
 ![Class diagram](images/table.png)

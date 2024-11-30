@@ -1,10 +1,16 @@
 body > button,
 body > div > table,
 #tab-example,
-#button-example {
+#button-example,
+#dropdown-example,
+#textarea-example {
   margin-bottom: 50px;
 }
 
 .modal-content > table {
   margin-bottom: 20px;
+}
+
+#textarea-example {
+  height: 150px;
 }

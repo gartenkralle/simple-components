@@ -3,7 +3,7 @@ import { Tab } from "/components/tab.js";
 
 const orderHeaderData = ["Id", "Customer Id", "Order Date", "Shipping Date", "State", "Total Amount", "Payment Method"];
 const customerHeaderData = ["Name", "Email", "Salary"];
-const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Phone", "Type"];
+const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Type"];
 
 const orderResponse = await fetch("../data/orders.json");
 const orderBodyData = await orderResponse.json();

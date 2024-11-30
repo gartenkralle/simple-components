@@ -11,6 +11,7 @@
 
 table {
   font-family: var(--font-family);
+  font-variant-numeric: tabular-nums;
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+}
+
+textarea {
+  font-family: var(--font-family);
+  font-weight: 400;
+  width: calc(100% - 30px);
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  border-radius: 8px;
+  resize: none;
+  border-style: none;
+  outline-style: solid;  
+  outline-color: #d1d5db;
+  outline-width: 1px;
+}
+
+textarea:focus {
+  outline-color: #4f46e5;
+  outline-width: 2px;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}

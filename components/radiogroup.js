@@ -1,9 +1,15 @@
 export class Radiogroup {
-  constructor() {
+  constructor(description) {
     this.htmlElement = document.createElement("fieldset");
+
+    const legend = document.createElement("legend"); 
+    legend.textContent = description;
+
+    this.htmlElement.appendChild(legend);
   }
 
   add(name, value) {
+
     const container = document.createElement("div");
     container.classList.add("radio-group-item");
 

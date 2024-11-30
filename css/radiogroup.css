@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+}
+
+label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  margin-left: 0.75rem;
+  font-size: 0.875rem;
+}
+
+fieldset {
+  border: none;
+}
+
+input[type="radio"] {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  appearance: none;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background-color: #ffffff;
+}
+
+input[type="radio"]::before {
+  content: "";
+  position: absolute;
+  inset: 0.25rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+}
+
+input[type="radio"]:checked {
+  border-color: #4f46e5;
+  background-color: #4f46e5;
+}
+
+input[type="radio"]:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+input[type="radio"]:disabled {
+  border-color: #d1d5db;
+  background-color: #f3f4f6;
+}
+
+input[type="radio"]:disabled::before {
+  background-color: #9ca3af;
+}
+
+input[type="radio"] {
+  forced-color-adjust: auto;
+}
+
+input[type="radio"]::before:not(:checked) {
+  display: none;
+}

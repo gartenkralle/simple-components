@@ -1,7 +1,3 @@
-:root {
-  font-family: "Arial", sans-serif;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -25,7 +21,6 @@
   transform: translateY(0);
   opacity: 1;
   animation-fill-mode: forwards;
-  font-weight: normal;
 }
 
 .modal.fade-in {

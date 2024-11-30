@@ -1,8 +1,16 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
-  font-family: "Arial", sans-serif;
+  --font-family: "Inter", sans-serif;
 }
 
 table {
+  font-family: var(--font-family);
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;

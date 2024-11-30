@@ -1,9 +1,21 @@
-:root {
-  --font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root{
+  font-family: "Inter", sans-serif;
+}
 .dropdown {
-  font-family: var(--font-family);
   position: relative;
   display: inline-block;
   width: 170px;
@@ -11,6 +23,8 @@
 
 .dropdown-button {
   font-family: var(--font-family);
+  font-weight: 600;  
+  font-size: 0.8125rem;
   width: 100%;
   padding: 10px 20px;
   display: flex;
@@ -18,7 +32,6 @@
   color: #fff;
   border: transparent;
   border-radius: 5px;
-  font-weight: 500;
   cursor: pointer;
 }
 
@@ -38,6 +51,7 @@
 }
 
 .dropdown-menu {
+
   display: none;
   position: absolute;
   top: 100%;
@@ -52,6 +66,8 @@
 }
 
 .dropdown-item {
+  font-family: var(--font-family);
+  font-weight: 400;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 14px;

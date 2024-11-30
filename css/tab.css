@@ -1,9 +1,15 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
-  --font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+  --font-family: "Inter", sans-serif;
 }
 
 .tab-container {
-  font-family: var(--font-family);
   width: 100%;
   background: #ffffff;
   border-radius: 8px;
@@ -17,6 +23,7 @@
 }
 
 .tab-link {
+  font-family: var(--font-family);
   flex: 1;
   text-align: center;
   padding: 15px 0;

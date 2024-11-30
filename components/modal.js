@@ -35,7 +35,5 @@ export class Modal {
       this.htmlElement.classList.remove("fade-out");
       this.htmlElement.classList.add("fade-in");
     });
-
-    sourceElement.appendChild(this.htmlElement);
   }
 }

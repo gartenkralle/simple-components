@@ -1,15 +1,26 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+}
+
 button {
-  font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family);
+  font-weight: 600;  
+  font-size: 0.8125rem;
   padding: 10px 30px 10px 30px;
   background: #4f46e5;
   color: #fff;
   border: transparent;
   border-radius: 5px;
-  font-weight: 600;
   cursor: pointer;
 }
 
 button:hover {
   background: #6366f1;
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                         

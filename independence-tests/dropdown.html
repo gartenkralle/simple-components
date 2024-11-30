@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="../css/dropdown.css" />
+  </head>
+  <body>
+    <div id="dropdown-example"></div>
+
+    <script type="module">
+      import { Dropdown } from "/components/dropdown.js";
+
+      const options = ["Option 1", "Option 2", "Option 3"];
+
+      const dropdown = new Dropdown(options);
+      const targetElement = document.querySelector("#dropdown-example");
+
+      dropdown.show(targetElement);
+    </script>
+  </body>
+</html>

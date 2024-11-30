@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="../css/modal.css" />
+  </head>
+  <body>
+    <div id="modal-example"></div>
+
+    <script type="module">
+      import { Modal } from "/components/modal.js";
+
+      const targetElement = document.querySelector("#modal-example");      
+      const button = document.createElement("button");
+      button.innerText = "Test Modal"
+
+      targetElement.appendChild(button);
+
+      const modal = new Modal();
+
+      modal.connect(button);
+    </script>
+  </body>
+</html>

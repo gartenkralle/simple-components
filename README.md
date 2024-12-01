@@ -155,6 +155,8 @@ radiogroup.show(targetElement);
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/table.js)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/modal.js)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/tab.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/tab.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/textarea.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/textarea.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/components/radiogroup.js)
 
 ### CSS
 
@@ -163,3 +165,5 @@ radiogroup.show(targetElement);
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/table.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/modal.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/tab.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/tab.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/textarea.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/textarea.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.2/css/radiogroup.css)

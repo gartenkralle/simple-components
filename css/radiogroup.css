@@ -1,5 +1,12 @@
 @font-face {
   font-family: "Inter";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
   src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-500-normal.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -9,7 +16,20 @@
   --font-family: "Inter", sans-serif;
 }
 
-label {
+legend{
+  font-weight: 400;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+fieldset {
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 20px;
+  border: none;
+}
+
+label {  
   font-family: var(--font-family);
   font-weight: 500;
   margin-left: 0.75rem;
@@ -17,17 +37,17 @@ label {
 }
 
 .radio-group-item {
-    margin:20px;
+  margin-bottom: 20px;
   align-items: center;
   display: flex;
 }
 
-.radio-group-item > input{
-    margin: 0;
+.radio-group-item:last-child {
+  margin-bottom: 0;
 }
 
-fieldset {
-  border: none;
+.radio-group-item > input {
+  margin: 0;
 }
 
 input[type="radio"] {

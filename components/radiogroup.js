@@ -2,14 +2,13 @@ export class Radiogroup {
   constructor(description) {
     this.htmlElement = document.createElement("fieldset");
 
-    const legend = document.createElement("legend"); 
+    const legend = document.createElement("legend");
     legend.textContent = description;
 
     this.htmlElement.appendChild(legend);
   }
 
   add(name, value) {
-
     const container = document.createElement("div");
     container.classList.add("radio-group-item");
 
@@ -17,14 +16,16 @@ export class Radiogroup {
     input.type = "radio";
     input.name = "single-group";
     input.value = value;
+    input.id = value;
 
     const label = document.createElement("label");
     label.textContent = name;
+    label.setAttribute("for", value);
 
     container.appendChild(input);
     container.appendChild(label);
 
-    this.htmlElement.appendChild(container)
+    this.htmlElement.appendChild(container);
   }
 
   show(targetElement) {

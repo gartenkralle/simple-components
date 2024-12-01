@@ -31,6 +31,7 @@ const bodyData = await response.json();
 const targetElement = document.querySelector("#table-example");
 
 const table = new Table(headerData, bodyData);
+
 table.show(targetElement);
 ```
 
@@ -144,6 +145,20 @@ radiogroup.add("Option 3", "option3");
 const targetElement = document.querySelector("#radiogroup-example");
 
 radiogroup.show(targetElement);
+```
+
+## Textbox
+
+![Class diagram](images/textbox.png)
+
+```javascript
+import { Textbox } from "/components/textbox.js";
+
+const textbox = new Textbox();
+
+const targetElement = document.querySelector("#textbox-example");
+
+textbox.show(targetElement);
 ```
 
 ## CDN

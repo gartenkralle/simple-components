@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="/css/textbox.css" />
+    <style>
+      #textbox-example{
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="textbox-example"></div>
+
+    <script type="module">
+      import { Textbox } from "/components/textbox.js";
+
+      const textbox = new Textbox();
+
+      const targetElement = document.querySelector("#textbox-example");
+
+      textbox.show(targetElement);
+    </script>
+  </body>
+</html>

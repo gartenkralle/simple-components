@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="/css/button.css" />
+    <link rel="stylesheet" href="/css/table.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+
+    <style>
+        table{
+            margin-bottom: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="modal-example"></div>
+
+    <script type="module">
+      import { Button } from "/components/button.js";
+      import { Table } from "/components/table.js";
+      import { Modal } from "/components/modal.js";
+
+      const headerData = ["Name", "Email", "Salary"];
+
+      const response = await fetch("/data/customers.json");
+      const bodyData = await response.json();
+
+      const sourceElement = new Button("Show Modal");
+      const targetElement = document.querySelector("#modal-example");
+
+      sourceElement.show(targetElement);
+
+      const table = new Table(headerData, bodyData);
+      const modal = new Modal();
+
+      const button = new Button("Button inside modal");
+
+      modal.add(table.htmlElement);
+      modal.add(button.htmlElement);
+
+      modal.connect(sourceElement.htmlElement);
+    </script>
+  </body>
+</html>

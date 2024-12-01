@@ -20,7 +20,6 @@ input[type="text"] {
   background-color: #fff;
   border-radius: 5px;
   border-width: 0px;
-  box-shadow: #fff 0px 0px 0px 0px inset, #d1d5db 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   outline-color: #d1d5db;
   outline-offset: -1px;
   outline-style: solid;

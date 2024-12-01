@@ -28,10 +28,6 @@ export class Radiogroup {
     this.htmlElement.appendChild(container);
   }
 
-  /**
-   * Returns value of the selected item.
-   * @returns {number} Returns value of the selected item.
-   */
   getSelectedItem() {
     const selectedRadio = this.htmlElement.querySelector('input[type="radio"]:checked');
 

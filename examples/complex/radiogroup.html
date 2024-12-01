@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="/css/radiogroup.css" />
+    <link rel="stylesheet" href="/css/button.css" />
+  </head>
+  <body>
+    <div id="radiogroup-example"></div>
+
+    <script type="module">
+      import { Radiogroup } from "/components/radiogroup.js";
+      import { Button } from "/components/button.js";
+
+      const radiogroup = new Radiogroup("Which option do you want to choose?");
+
+      radiogroup.add("Option 1", "option1");
+      radiogroup.add("Option 2", "option2");
+      radiogroup.add("Option 3", "option3");
+
+      const targetElement = document.querySelector("#radiogroup-example");
+
+      const button = new Button("Save");
+
+      radiogroup.show(targetElement);
+      button.show(targetElement);
+
+      const label = document.createElement("label");
+      targetElement.appendChild(label);      
+
+      button.htmlElement.addEventListener("click", () => {
+        label.textContent = radiogroup.getSelectedItem();
+      });
+    </script>
+  </body>
+</html>

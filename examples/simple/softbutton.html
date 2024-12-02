@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="/css/softbutton.css" />
+  </head>
+  <body>
+    <div id="softbutton-example"></div>
+
+    <script type="module">
+      import { SoftButton } from "/components/softbutton.js";
+
+      const button = new SoftButton("Softbutton example");
+
+      const targetElement = document.querySelector("#softbutton-example");
+
+      button.show(targetElement);
+    </script>
+  </body>
+</html>

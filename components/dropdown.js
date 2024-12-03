@@ -1,5 +1,5 @@
 export class Dropdown {
-  constructor(options) {
+  constructor(text, options) {
     this.htmlElement = document.createElement("div");
 
     this.htmlElement.className = "dropdown";
@@ -8,7 +8,7 @@ export class Dropdown {
     const button = document.createElement("button");
 
     button.className = "dropdown-button";
-    button.textContent = "Select an option";
+    button.textContent = text;
     this.htmlElement.appendChild(button);
 
     const dropdownMenu = document.createElement("div");

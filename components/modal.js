@@ -31,7 +31,7 @@ export class Modal {
 
   connect(sourceElement) {
     sourceElement.addEventListener("click", () => {
-      this.htmlElement.style.display = "block";
+      this.htmlElement.style.display = "flex";
       this.htmlElement.classList.remove("fade-out");
       this.htmlElement.classList.add("fade-in");
     });

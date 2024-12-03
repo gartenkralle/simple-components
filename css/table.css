@@ -14,6 +14,7 @@
 
 :root {
   --font-family: "Inter", sans-serif;
+  --primary-color: #4f46e5;
 }
 
 table {
@@ -30,7 +31,7 @@ table {
 }
 
 thead {
-  background-color: #4f46e5;
+  background-color: var(--primary-color);
   color: #ffffff;
 }
 

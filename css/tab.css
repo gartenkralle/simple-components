@@ -7,6 +7,7 @@
 
 :root {
   --font-family: "Inter", sans-serif;
+  --primary-color: #4f46e5;
 }
 
 .tab-container {
@@ -51,7 +52,7 @@
 }
 
 .tab-link.active {
-  color: #4f46e5;
+  color: var(--primary-color);
   font-weight: 500;
 }
 
@@ -63,6 +64,6 @@
   transform: translateX(-50%);
   width: 50%;
   height: 2px;
-  background: #4f46e5;
+  background: var(--primary-color);
   border-radius: 2px;
 }

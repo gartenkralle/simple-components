@@ -12,9 +12,12 @@
   font-style: normal;
 }
 
-:root{
-  font-family: "Inter", sans-serif;
+:root {
+  --font-family: "Inter", sans-serif;
+  --primary-color: #4f46e5;
+  --primary-color-light:#6366f1;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -23,12 +26,12 @@
 
 .dropdown-button {
   font-family: var(--font-family);
-  font-weight: 600;  
+  font-weight: 600;
   font-size: 0.8125rem;
   width: 100%;
   padding: 10px 20px;
   display: flex;
-  background: #4f46e5;
+  background: var(--primary-color);
   color: #fff;
   border: transparent;
   border-radius: 5px;
@@ -36,7 +39,7 @@
 }
 
 .dropdown-button:hover {
-  background: #6366f1;
+  background: var(--primary-color-light);
 }
 
 .dropdown-button::after {
@@ -51,7 +54,6 @@
 }
 
 .dropdown-menu {
-
   display: none;
   position: absolute;
   top: 100%;
@@ -78,7 +80,7 @@
 
 .dropdown-item:hover {
   background-color: #f1f1f1;
-  color: #4f46e5;
+  color: var(--primary-color);
 }
 
 .dropdown-item:active {

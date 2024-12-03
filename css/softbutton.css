@@ -7,6 +7,9 @@
 
 :root {
   --font-family: "Inter", sans-serif;
+  --primary-color: #4f46e5;
+  --secondary-color:#eef2ff;
+  --secondary-color-dark: #e0e7ff;
 }
 
 button {
@@ -14,13 +17,13 @@ button {
   font-weight: 600;  
   font-size: 0.8125rem;
   padding: 10px 20px 10px 20px;
-  background: #eef2ff;
-  color: #4f46e5;
+  background: var(--secondary-color);
+  color: var(--primary-color);
   border: transparent;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #e0e7ff;
+  background: var(--secondary-color-dark);
 }

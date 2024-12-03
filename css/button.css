@@ -7,6 +7,8 @@
 
 :root {
   --font-family: "Inter", sans-serif;
+  --primary-color: #4f46e5;
+  --primary-color-light:#6366f1;
 }
 
 button {
@@ -14,7 +16,7 @@ button {
   font-weight: 600;  
   font-size: 0.8125rem;
   padding: 10px 20px 10px 20px;
-  background: #4f46e5;
+  background: var(--primary-color);
   color: #fff;
   border: transparent;
   border-radius: 5px;
@@ -22,5 +24,5 @@ button {
 }
 
 button:hover {
-  background: #6366f1;
+  background: var(--primary-color-light);
 }

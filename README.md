@@ -7,7 +7,7 @@
 ![Class diagram](images/button.png)
 
 ```javascript
-import { Button } from "/components/js/button.js";
+import { Button } from "/components/button.js";
 
 const button = new Button("Button example");
 
@@ -21,7 +21,7 @@ button.show(targetElement);
 ![Class diagram](images/softbutton.png)
 
 ```javascript
-import { SoftButton } from "/components/js/softbutton.js";
+import { SoftButton } from "/components/softbutton.js";
 
 const button = new SoftButton("Softbutton example");
 
@@ -35,7 +35,7 @@ button.show(targetElement);
 ![Class diagram](images/table.png)
 
 ```javascript
-import { Table } from "/components/js/table.js";
+import { Table } from "/components/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
 
@@ -54,9 +54,9 @@ table.show(targetElement);
 ![Class diagram](images/modal.png)
 
 ```javascript
-import { Button } from "/components/js/button.js";
-import { Table } from "/components/js/table.js";
-import { Modal } from "/components/js/modal.js";
+import { Button } from "/components/button.js";
+import { Table } from "/components/table.js";
+import { Modal } from "/components/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
 
@@ -81,8 +81,8 @@ modal.connect(sourceElement);
 ![Class diagram](images/tab.png)
 
 ```javascript
-import { Table } from "/components/js/table.js";
-import { Tab } from "/components/js/tab.js";
+import { Table } from "/components/table.js";
+import { Tab } from "/components/tab.js";
 
 const orderHeaderData = ["Id", "Customer Id", "Order Date", "Shipping Date", "State", "Total Amount", "Payment Method"];
 const customerHeaderData = ["Name", "Email", "Salary"];
@@ -117,7 +117,7 @@ tab.show(targetElement);
 ![Class diagram](images/dropdown.png)
 
 ```javascript
-import { Dropdown } from "/components/js/dropdown.js";
+import { Dropdown } from "/components/dropdown.js";
 
 const options = ["Option 1", "Option 2", "Option 3"];
 const text = "Select an option";
@@ -132,7 +132,7 @@ dropdown.show(targetElement);
 ![Class diagram](images/textarea.png)
 
 ```javascript
-import { Textarea } from "/components/js/textarea.js";
+import { Textarea } from "/components/textarea.js";
 
 const placeholder = "This is a placeholder";
 
@@ -148,7 +148,7 @@ textarea.show(targetElement);
 ![Class diagram](images/radiogroup.png)
 
 ```javascript
-import { Radiogroup } from "/components/js/radiogroup.js";
+import { Radiogroup } from "/components/radiogroup.js";
 
 const radiogroup = new Radiogroup("Which option do you want to choose?");
 
@@ -166,7 +166,7 @@ radiogroup.show(targetElement);
 ![Class diagram](images/textbox.png)
 
 ```javascript
-import { Textbox } from "/components/js/textbox.js";
+import { Textbox } from "/components/textbox.js";
 
 const textbox = new Textbox();
 
@@ -177,38 +177,26 @@ textbox.show(targetElement);
 
 ## CDN
 
-### TS
-
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/button.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/button.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/softbutton.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/softbutton.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/dropdown.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/dropdown.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/table.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/table.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/modal.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/modal.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/tab.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/tab.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/textarea.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/textarea.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/radiogroup.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/radiogroup.ts)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/textbox.ts](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/ts/textbox.ts)
-
 ### JS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/button.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/button.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/softbutton.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/softbutton.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/dropdown.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/dropdown.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/table.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/modal.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/tab.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/tab.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/textarea.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/textarea.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/radiogroup.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/textbox.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/components/js/textbox.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/button.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/button.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/softbutton.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/softbutton.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/dropdown.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/dropdown.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/table.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/modal.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/tab.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/tab.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/textarea.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/textarea.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/radiogroup.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/textbox.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/components/textbox.js)
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/button.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/softbutton.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/softbutton.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/dropdown.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/dropdown.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/table.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/modal.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/tab.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/tab.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/textarea.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/textarea.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/radiogroup.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/textbox.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.7/css/textbox.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/softbutton.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/softbutton.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/dropdown.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/dropdown.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/tab.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/tab.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/textarea.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/textarea.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/radiogroup.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/textbox.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@1.1.8/css/textbox.css)

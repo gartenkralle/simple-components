@@ -4,7 +4,6 @@
       "module": "ES2022",
       "moduleResolution": "node",
       "removeComments": true,
-      "rootDir": "components/ts",
       "outDir": "components/js"
     }
   }

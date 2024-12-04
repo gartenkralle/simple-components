@@ -1,12 +1,12 @@
 export class SoftButton {
-    public htmlElement: HTMLButtonElement;
-  
-    constructor(text: string) {
-      this.htmlElement = document.createElement("button");
-      this.htmlElement.innerText = text;
-    }
-  
-    show(targetElement: HTMLElement): void {
-      targetElement.appendChild(this.htmlElement);
-    }
-  }
+	public htmlElement: HTMLButtonElement;
+
+	constructor(text: string) {
+		this.htmlElement = document.createElement("button");
+		this.htmlElement.innerText = text;
+	}
+
+	show(targetElement: HTMLElement): void {
+		targetElement.appendChild(this.htmlElement);
+	}
+}

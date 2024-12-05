@@ -10,20 +10,20 @@
   --primary-color: #4f46e5;
 }
 
-.tab-container {
+.sc-tab-container {
   width: 100%;
   background: #ffffff;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.tab-nav {
+.sc-tab-nav {
   display: flex;
   border-bottom: 1px solid #eaeaea;
   margin-bottom: 16px;
 }
 
-.tab-link {
+.sc-tab-link {
   font-family: var(--font-family);
   flex: 1;
   text-align: center;
@@ -35,11 +35,11 @@
   position: relative;
 }
 
-.tab-link:hover {
+.sc-tab-link:hover {
   color: #374151;
 }
 
-.tab-link:not(.active):hover::after {
+.sc-tab-link:not(.sc-active):hover::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -51,12 +51,12 @@
   border-radius: 2px;
 }
 
-.tab-link.active {
+.sc-tab-link.sc-active {
   color: var(--primary-color);
   font-weight: 500;
 }
 
-.tab-link.active::after {
+.sc-tab-link.sc-active::after {
   content: "";
   position: absolute;
   bottom: 0;

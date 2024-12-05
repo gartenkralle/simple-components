@@ -1,18 +1,18 @@
 export class Slider {
     constructor(text) {
         this.htmlElement = document.createElement("div");
-        this.htmlElement.classList.add("toggle-container");
+        this.htmlElement.classList.add("sc-toggle-container");
 
         const toggleSwitch = document.createElement("div");
         toggleSwitch.id = "toggle-switch";
-        toggleSwitch.classList.add("toggle-switch");
+        toggleSwitch.classList.add("sc-toggle-switch");
 
         toggleSwitch.addEventListener('click', () => {
-            toggleSwitch.classList.toggle('active');
+            toggleSwitch.classList.toggle('sc-active');
         });
 
         const span = document.createElement("span");
-        span.classList.add("label");
+        span.classList.add("sc-label");
         span.textContent = text;
 
         this.htmlElement.appendChild(toggleSwitch);

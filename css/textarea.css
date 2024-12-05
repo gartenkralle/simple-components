@@ -10,7 +10,7 @@
   --primary-color: #4f46e5;
 }
 
-textarea {
+.sc-textarea {
   font-family: var(--font-family);
   font-weight: 400;
   width: calc(100% - 30px);
@@ -29,13 +29,13 @@ textarea {
   outline-width: 1px;
 }
 
-textarea:focus {
+.sc-textarea:focus {
   outline-color: var(--primary-color);
   outline-offset: -2px;
   outline-style: solid;
   outline-width: 2px;
 }
 
-textarea::placeholder {
+.sc-textarea::placeholder {
   color: #aaa;
 }

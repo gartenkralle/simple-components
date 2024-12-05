@@ -1,6 +1,7 @@
 export class Textarea {
     constructor(placeholder) {
         this.htmlElement = document.createElement("textarea");
+        this.htmlElement.classList.add("sc-textarea");
         this.htmlElement.placeholder = placeholder;
     }
 

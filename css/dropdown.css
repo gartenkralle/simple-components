@@ -18,13 +18,13 @@
   --primary-color-light:#6366f1;
 }
 
-.dropdown {
+.sc-dropdown {
   position: relative;
   display: inline-block;
   width: 170px;
 }
 
-.dropdown-button {
+.sc-dropdown-button {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 0.8125rem;
@@ -38,22 +38,22 @@
   cursor: pointer;
 }
 
-.dropdown-button:hover {
+.sc-dropdown-button:hover {
   background: var(--primary-color-light);
 }
 
-.dropdown-button::after {
+.sc-dropdown-button::after {
   content: "▼";
   font-size: 12px;
   margin-left: auto;
   transition: transform 0.3s ease;
 }
 
-.dropdown[aria-expanded="true"] .dropdown-button::after {
+.sc-dropdown[aria-expanded="true"] .dropdown-button::after {
   transform: rotate(180deg);
 }
 
-.dropdown-menu {
+.sc-dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -67,7 +67,7 @@
   margin: 5px 0 0 0;
 }
 
-.dropdown-item {
+.sc-dropdown-item {
   font-family: var(--font-family);
   font-weight: 400;
   padding: 10px 15px;
@@ -78,16 +78,16 @@
   display: block;
 }
 
-.dropdown-item:hover {
+.sc-dropdown-item:hover {
   background-color: #f1f1f1;
   color: var(--primary-color);
 }
 
-.dropdown-item:active {
+.sc-dropdown-item:active {
   background-color: #e0e0e0;
 }
 
-.dropdown-menu {
+.sc-dropdown-menu {
   animation: fadeIn 0.3s ease-out;
 }
 

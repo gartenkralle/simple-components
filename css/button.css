@@ -11,7 +11,7 @@
   --primary-color-light:#6366f1;
 }
 
-button {
+.sc-button {
   font-family: var(--font-family);
   font-weight: 600;  
   font-size: 0.8125rem;
@@ -23,6 +23,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.sc-button:hover {
   background: var(--primary-color-light);
 }

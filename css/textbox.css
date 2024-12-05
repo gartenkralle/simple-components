@@ -10,7 +10,7 @@
   --primary-color: #4f46e5;
 }
 
-input[type="text"] {
+.sc-input[type="text"] {
   font-family: var(--font-family);
   width: calc(100% - 24px);
   font-weight: 400;
@@ -27,7 +27,7 @@ input[type="text"] {
   outline-width: 1px;
 }
 
-input[type="text"]:focus {
+.sc-input[type="text"]:focus {
   outline-color: var(--primary-color);
   outline-offset: -2px;
   outline-style: solid;

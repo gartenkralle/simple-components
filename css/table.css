@@ -17,7 +17,7 @@
   --primary-color: #4f46e5;
 }
 
-table {
+.sc-table {
   font-family: var(--font-family);
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -30,12 +30,12 @@ table {
   color: #333;
 }
 
-thead {
+.sc-thead {
   background-color: var(--primary-color);
   color: #ffffff;
 }
 
-thead th {
+.sc-thead .sc-th {
   padding: 12px 20px;
   font-size: 14px;
   text-transform: uppercase;
@@ -43,35 +43,35 @@ thead th {
   letter-spacing: 0.03em;
 }
 
-tbody tr {
+.sc-tbody .sc-tr {
   border-bottom: 1px solid #e0e0e0;
   transition: background-color 0.3s ease;
 }
 
-tbody tr:hover {
+.sc-tbody tr:hover {
   background-color: #f5f5f5;
 }
 
-td {
+.sc-td {
   padding: 12px 20px;
   font-size: 14px;
   color: #555;
   vertical-align: middle;
 }
 
-tbody tr:nth-child(odd) {
+.sc-tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-.table-container::-webkit-scrollbar {
+.sc-table-container::-webkit-scrollbar {
   height: 8px;
 }
 
-.table-container::-webkit-scrollbar-thumb {
+.sc-table-container::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 4px;
 }
 
-.table-container::-webkit-scrollbar-thumb:hover {
+.sc-table-container::-webkit-scrollbar-thumb:hover {
   background: #999;
 }

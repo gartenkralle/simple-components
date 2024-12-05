@@ -1,31 +1,31 @@
 export class Dropdown {
     constructor(text, options) {
         this.htmlElement = document.createElement("div");
-        this.htmlElement.className = "dropdown";
+        this.htmlElement.className = "sc-dropdown";
         this.htmlElement.setAttribute("aria-expanded", "false");
         
         const button = document.createElement("button");
-        button.className = "dropdown-button";
+        button.className = "sc-dropdown-button";
         button.textContent = text;
         
         this.htmlElement.appendChild(button);
 
         const dropdownMenu = document.createElement("div");
-        dropdownMenu.className = "dropdown-menu";
+        dropdownMenu.className = "sc-dropdown-menu";
         
         options.forEach((option) => {
             const item = document.createElement("a");
             item.href = "#";
-            item.className = "dropdown-item";
+            item.className = "sc-dropdown-item";
             item.textContent = option;
             dropdownMenu.appendChild(item);
         });
 
         this.htmlElement.appendChild(dropdownMenu);
 
-        this.button = this.htmlElement.querySelector(".dropdown-button");
-        this.menu = this.htmlElement.querySelector(".dropdown-menu");
-        this.items = this.menu.querySelectorAll(".dropdown-item");
+        this.button = this.htmlElement.querySelector(".sc-dropdown-button");
+        this.menu = this.htmlElement.querySelector(".sc-dropdown-menu");
+        this.items = this.menu.querySelectorAll(".sc-dropdown-item");
         this.isOpen = false;
 
         this.addEventListeners();

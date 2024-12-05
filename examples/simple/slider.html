@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Javascript Library</title>
+
+    <link rel="stylesheet" href="/css/slider.css" />
+  </head>
+  <body>
+    <div id="slider-example"></div>
+
+    <script type="module">
+        import { Slider } from "/components/slider.js";
+
+        const slider = new Slider("Slider label");
+
+        const targetElement = document.querySelector("#slider-example");
+
+        slider.show(targetElement);
+    </script>
+  </body>
+</html>

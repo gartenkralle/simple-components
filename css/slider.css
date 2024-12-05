@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Inter";
+    src: url("https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/files/inter-latin-400-normal.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  :root {
+    --font-family: "Inter", sans-serif;
+    --primary-color: #4f46e5;
+  }
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 46px;
+    height: 21px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active {
+    background-color: var(--primary-color);
+}
+    
+.toggle-switch.active::before {
+    transform: translateX(25px);
+}
+
+.label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #333;
+    margin-top: 1px;
+}

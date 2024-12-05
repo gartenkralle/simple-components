@@ -2,13 +2,13 @@ export class Modal {
     constructor() {
         this.htmlElement = document.createElement("div");
         this.htmlElement.classList.add("sc-modal");
-        
+
         const modalContent = document.createElement("div");
         modalContent.classList.add("sc-modal-content");
-        
+
         this.htmlElement.appendChild(modalContent);
         document.body.appendChild(this.htmlElement);
-        
+
         window.addEventListener("click", (e) => {
             if (e.target === this.htmlElement) {
                 this.htmlElement.classList.remove("sc-fade-in");
@@ -26,13 +26,8 @@ export class Modal {
 
     add(htmlElement) {
         const modalContent = this.htmlElement.querySelector(".sc-modal-content");
-        
-        if (modalContent) {
-            modalContent.appendChild(htmlElement);
-        }
-        else {
-            console.error("Modal content element not found.");
-        }
+
+        modalContent.appendChild(htmlElement);
     }
 
     connect(sourceElement) {

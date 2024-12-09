@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/dropdown.css" />
-  </head>
-  <body>
-    <div id="dropdown-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Dropdown } from "/components/dropdown.js";
+  <link rel="stylesheet" href="/css/dropdown.css" />
+</head>
 
-      const options = ["Option 1", "Option 2", "Option 3"];
-      const text = "Select an option";
-      const dropdown = new Dropdown(text, options);
-      const targetElement = document.querySelector("#dropdown-example");
+<body>
+  <div id="dropdown-example"></div>
 
-      dropdown.show(targetElement);
-    </script>
-  </body>
+  <script type="module">
+    import { Dropdown } from "/components/dropdown.js";
+
+    const options = ["Option 1", "Option 2", "Option 3"];
+    const text = "Select an option";
+    const dropdown = new Dropdown(text, options);
+    const targetElement = document.querySelector("#dropdown-example");
+
+    dropdown.show(targetElement);
+
+    dropdown.addEventListener("change", (e) => {
+      console.log(e.target.text);
+    });
+  </script>
+</body>
+
 </html>

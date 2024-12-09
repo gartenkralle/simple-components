@@ -57,12 +57,17 @@ export class Dropdown {
 
     onItemClick(event) {
         event.preventDefault();
-        const selectedItem = event.target.textContent;
 
-        if (selectedItem) {
-            this.button.textContent = selectedItem;
-        }
+        this.button.textContent = event.target.textContent;   
         
         this.toggleDropdown();
+
+        event.target.dispatchEvent(new CustomEvent('change', {
+            target: event
+        }));
+    }
+
+    addEventListener(name, action) {
+        this.items.forEach((item) => item.addEventListener(name, (e) => action(e)));
     }
 }

@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/textbox.css" />
-    <style>
-      #textbox-example{
-        width: 300px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="textbox-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Textbox } from "/components/textbox.js";
+  <link rel="stylesheet" href="/css/textbox.css" />
+</head>
 
-      const textbox = new Textbox();
+<body>
+  <div id="textbox-example"></div>
 
-      const targetElement = document.querySelector("#textbox-example");
+  <script type="module">
+    import { Textbox } from "/components/textbox.js";
 
-      textbox.show(targetElement);
-    </script>
-  </body>
+    const textbox = new Textbox();
+
+    const targetElement = document.querySelector("#textbox-example");
+
+    textbox.show(targetElement);
+  </script>
+</body>
+
 </html>

@@ -2,7 +2,10 @@ export class Textarea {
     constructor(placeholder) {
         this.htmlElement = document.createElement("textarea");
         this.htmlElement.classList.add("sc-textarea");
-        this.htmlElement.placeholder = placeholder;
+
+        if (placeholder !== undefined) {
+            this.htmlElement.placeholder = placeholder;
+        }
     }
 
     show(targetElement) {
@@ -13,7 +16,7 @@ export class Textarea {
 
     getRowCount(targetElement) {
         const lineHeight = parseFloat(window.getComputedStyle(this.htmlElement).lineHeight || "0");
-        
+
         return Math.floor(targetElement.clientHeight / lineHeight);
     }
 }

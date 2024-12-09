@@ -12,7 +12,7 @@
 
 .sc-input[type="text"] {
   font-family: var(--font-family);
-  width: calc(100% - 24px);
+  width: 100%;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -25,6 +25,7 @@
   outline-offset: -1px;
   outline-style: solid;
   outline-width: 1px;
+  box-sizing: border-box;
 }
 
 .sc-input[type="text"]:focus {

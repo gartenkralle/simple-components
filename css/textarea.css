@@ -13,7 +13,7 @@
 .sc-textarea {
   font-family: var(--font-family);
   font-weight: 400;
-  width: calc(100% - 30px);
+  width: 100%;
   padding: 15px;
   font-size: 16px;
   line-height: 1.5;
@@ -27,6 +27,7 @@
   outline-offset: -1px;
   outline-style: solid;
   outline-width: 1px;
+  box-sizing: border-box;
 }
 
 .sc-textarea:focus {

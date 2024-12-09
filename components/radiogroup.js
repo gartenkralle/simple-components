@@ -10,6 +10,7 @@ export class Radiogroup {
         }
 
         this.htmlElement.appendChild(legend);
+        this.groupName = crypto.randomUUID();
     }
 
     add(name, value) {
@@ -19,15 +20,15 @@ export class Radiogroup {
         const input = document.createElement("input");
         input.classList.add("sc-input");
         input.type = "radio";
-        input.name = "single-group";
+        input.name = this.groupName;
         input.value = value;
-        input.id = value;
+        input.id = crypto.randomUUID();
 
         const label = document.createElement("label");
         label.classList.add("sc-label");
 
         label.textContent = name;
-        label.setAttribute("for", value);
+        label.setAttribute("for", input.id);
 
         container.appendChild(input);
         container.appendChild(label);

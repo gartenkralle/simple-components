@@ -16,7 +16,7 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #888;
-  width: clamp(100px, 90%, 1200px);
+  width: clamp(100px, 90%, 600px);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 1;

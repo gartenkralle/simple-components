@@ -1,5 +1,9 @@
-export class Textarea {
+import { UIElement } from "./uielement.js";
+
+export class Textarea extends UIElement {
     constructor(placeholder) {
+        super();
+        
         this.htmlElement = document.createElement("textarea");
         this.htmlElement.classList.add("sc-textarea");
 
@@ -9,6 +13,8 @@ export class Textarea {
     }
 
     show(targetElement) {
+        this.htmlElement.hidden = false;
+
         targetElement.appendChild(this.htmlElement);
 
         this.htmlElement.rows = this.getRowCount(targetElement);

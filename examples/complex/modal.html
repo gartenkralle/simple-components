@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/button.css" />
-    <link rel="stylesheet" href="/css/table.css" />
-    <link rel="stylesheet" href="/css/modal.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <style>
-        table{
-            margin-bottom: 20px;
-        }
-    </style>
-  </head>
-  <body>
-    <div id="modal-example"></div>
+  <link rel="stylesheet" href="/components/css/button.css" />
+  <link rel="stylesheet" href="/components/css/table.css" />
+  <link rel="stylesheet" href="/components/css/modal.css" />
 
-    <script type="module">
-      import { Button } from "/components/button.js";
-      import { Table } from "/components/table.js";
-      import { Modal } from "/components/modal.js";
+  <style>
+    table {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
 
-      const headerData = ["Name", "Email", "Salary"];
+<body>
+  <div id="modal-example"></div>
 
-      const response = await fetch("/data/customers.json");
-      const bodyData = await response.json();
+  <script type="module">
+    import { Button } from "/components/js/button.js";
+    import { Table } from "/components/js/table.js";
+    import { Modal } from "/components/js/modal.js";
 
-      const sourceElement = new Button("Show Modal");
-      const targetElement = document.querySelector("#modal-example");
+    const headerData = ["Name", "Email", "Salary"];
 
-      sourceElement.show(targetElement);
+    const response = await fetch("/data/customers.json");
+    const bodyData = await response.json();
 
-      const table = new Table(headerData, bodyData);
-      const modal = new Modal();
+    const sourceElement = new Button("Show Modal");
+    const targetElement = document.querySelector("#modal-example");
 
-      const button = new Button("Button inside modal");
+    sourceElement.show(targetElement);
 
-      modal.add(table.htmlElement);
-      modal.add(button.htmlElement);
+    const table = new Table(headerData, bodyData);
+    const modal = new Modal();
 
-      modal.connect(sourceElement.htmlElement);
-    </script>
-  </body>
+    const button = new Button("Button inside modal");
+
+    modal.add(table.htmlElement);
+    modal.add(button.htmlElement);
+
+    modal.connect(sourceElement.htmlElement);
+  </script>
+</body>
+
 </html>

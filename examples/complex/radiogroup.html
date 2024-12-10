@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/radiogroup.css" />
-    <link rel="stylesheet" href="/css/button.css" />
-  </head>
-  <body>
-    <div id="radiogroup-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Radiogroup } from "/components/radiogroup.js";
-      import { Button } from "/components/button.js";
+  <link rel="stylesheet" href="/components/css/radiogroup.css" />
+  <link rel="stylesheet" href="/components/css/button.css" />
+</head>
 
-      const radiogroup = new Radiogroup("Which option do you want to choose?");
+<body>
+  <div id="radiogroup-example"></div>
 
-      radiogroup.add("Option 1");
-      radiogroup.add("Option 2");
-      radiogroup.add("Option 3");
+  <script type="module">
+    import { Radiogroup } from "/components/js/radiogroup.js";
+    import { Button } from "/components/js/button.js";
 
-      const targetElement = document.querySelector("#radiogroup-example");
+    const radiogroup = new Radiogroup("Which option do you want to choose?");
 
-      const button = new Button("Save");
+    radiogroup.add("Option 1");
+    radiogroup.add("Option 2");
+    radiogroup.add("Option 3");
 
-      radiogroup.show(targetElement);
-      button.show(targetElement);  
+    const targetElement = document.querySelector("#radiogroup-example");
 
-      button.addEventListener("click", () => {
-        console.log(radiogroup.getSelectedItem());
-      });
-    </script>
-  </body>
+    const button = new Button("Save");
+
+    radiogroup.show(targetElement);
+    button.show(targetElement);
+
+    button.addEventListener("click", () => {
+      console.log(radiogroup.getSelectedItem());
+    });
+  </script>
+</body>
+
 </html>

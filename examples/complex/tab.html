@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/table.css" />
-    <link rel="stylesheet" href="/css/tab.css" />
-  </head>
-  <body>
-    <div id="tab-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Table } from "/components/table.js";
-      import { Tab } from "/components/tab.js";
+  <link rel="stylesheet" href="/components/css/table.css" />
+  <link rel="stylesheet" href="/components/css/tab.css" />
+</head>
 
-      const orderHeaderData = ["Id", "Customer Id", "Order Date", "Shipping Date", "State", "Total Amount", "Payment Method"];
-      const customerHeaderData = ["Name", "Email", "Salary"];
-      const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Type"];
+<body>
+  <div id="tab-example"></div>
 
-      const orderResponse = await fetch("/data/orders.json");
-      const orderBodyData = await orderResponse.json();
+  <script type="module">
+    import { Table } from "/components/js/table.js";
+    import { Tab } from "/components/js/tab.js";
 
-      const customerResponse = await fetch("/data/customers.json");
-      const customerBodyData = await customerResponse.json();
+    const orderHeaderData = ["Id", "Customer Id", "Order Date", "Shipping Date", "State", "Total Amount", "Payment Method"];
+    const customerHeaderData = ["Name", "Email", "Salary"];
+    const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Type"];
 
-      const addressResponse = await fetch("/data/address.json");
-      const addressBodyData = await addressResponse.json();
+    const orderResponse = await fetch("/data/orders.json");
+    const orderBodyData = await orderResponse.json();
 
-      const orderTable = new Table(orderHeaderData, orderBodyData);
-      const customerTable = new Table(customerHeaderData, customerBodyData);
-      const addressTable = new Table(addressHeaderData, addressBodyData);
+    const customerResponse = await fetch("/data/customers.json");
+    const customerBodyData = await customerResponse.json();
 
-      const targetElement = document.querySelector("#tab-example");
+    const addressResponse = await fetch("/data/address.json");
+    const addressBodyData = await addressResponse.json();
 
-      const tab = new Tab();
+    const orderTable = new Table(orderHeaderData, orderBodyData);
+    const customerTable = new Table(customerHeaderData, customerBodyData);
+    const addressTable = new Table(addressHeaderData, addressBodyData);
 
-      tab.add("Orders", orderTable.htmlElement);
-      tab.add("Customers", customerTable.htmlElement);
-      tab.add("Addresses", addressTable.htmlElement);
+    const targetElement = document.querySelector("#tab-example");
 
-      tab.show(targetElement);
-    </script>
-  </body>
+    const tab = new Tab();
+
+    tab.add("Orders", orderTable.htmlElement);
+    tab.add("Customers", customerTable.htmlElement);
+    tab.add("Addresses", addressTable.htmlElement);
+
+    tab.show(targetElement);
+  </script>
+</body>
+
 </html>

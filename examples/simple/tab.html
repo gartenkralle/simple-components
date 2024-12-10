@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/tab.css" />
-  </head>
-  <body>
-    <div id="tab-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Tab } from "/components/tab.js";
+  <link rel="stylesheet" href="/components/css/tab.css" />
+</head>
 
-      const targetElement = document.querySelector("#tab-example");
+<body>
+  <div id="tab-example"></div>
 
-      const tab = new Tab();
+  <script type="module">
+    import { Tab } from "/components/js/tab.js";
 
-      tab.add("Orders", document.createElement("div"));
-      tab.add("Customers", document.createElement("div"));
-      tab.add("Addresses", document.createElement("div"));
+    const targetElement = document.querySelector("#tab-example");
 
-      tab.show(targetElement);
-    </script>
-  </body>
+    const tab = new Tab();
+
+    tab.add("Orders", document.createElement("div"));
+    tab.add("Customers", document.createElement("div"));
+    tab.add("Addresses", document.createElement("div"));
+
+    tab.show(targetElement);
+  </script>
+</body>
+
 </html>

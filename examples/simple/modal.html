@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Javascript Library</title>
 
-    <link rel="stylesheet" href="/css/modal.css" />
-  </head>
-  <body>
-    <div id="modal-example"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
 
-    <script type="module">
-      import { Modal } from "/components/modal.js";
+  <link rel="stylesheet" href="/components/css/modal.css" />
+</head>
 
-      const targetElement = document.querySelector("#modal-example");      
-      const button = document.createElement("button");
-      button.innerText = "Test Modal"
+<body>
+  <div id="modal-example"></div>
 
-      targetElement.appendChild(button);
+  <script type="module">
+    import { Modal } from "/components/js/modal.js";
 
-      const modal = new Modal();
+    const targetElement = document.querySelector("#modal-example");
+    const button = document.createElement("button");
+    button.innerText = "Test Modal"
 
-      modal.connect(button);
-    </script>
-  </body>
+    targetElement.appendChild(button);
+
+    const modal = new Modal();
+
+    modal.connect(button);
+  </script>
+</body>
+
 </html>

@@ -1,5 +1,9 @@
-export class Modal {
+import { UIElement } from "./uielement.js";
+
+export class Modal extends UIElement {
     constructor() {
+        super();
+
         this.htmlElement = document.createElement("div");
         this.htmlElement.classList.add("sc-modal");
 

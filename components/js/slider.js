@@ -1,5 +1,8 @@
-export class Slider {
+import { UIElement } from "./uielement.js";
+
+export class Slider extends UIElement {
     constructor(text) {
+        super();
         this.htmlElement = document.createElement("div");
         this.htmlElement.classList.add("sc-toggle-container");
 

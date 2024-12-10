@@ -1,5 +1,9 @@
-export class Dropdown {
+import { UIElement } from "./uielement.js";
+
+export class Dropdown extends UIElement {
     constructor(text, options) {
+        super();
+        
         this.htmlElement = document.createElement("div");
         this.htmlElement.className = "sc-dropdown";
         this.htmlElement.setAttribute("aria-expanded", "false");

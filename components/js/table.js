@@ -1,10 +1,14 @@
-export class Table {
+import { UIElement } from "./uielement.js";
+
+export class Table extends UIElement {
     constructor(headerData, bodyData) {
+        super();
+
         this.bodyData = bodyData;
         this.headerData = headerData;
         this.htmlElement = document.createElement("table");
         this.htmlElement.classList.add("sc-table")
-        
+
         const header = document.createElement("thead");
         header.classList.add("sc-thead");
 
@@ -13,7 +17,7 @@ export class Table {
 
         this.htmlElement.appendChild(header);
         this.htmlElement.appendChild(body);
-        
+
         this.populateHeaders(this.headerData);
         this.populateBody(this.bodyData);
     }
@@ -26,7 +30,7 @@ export class Table {
         const tableHead = this.htmlElement.querySelector("thead");
 
         const headerRow = document.createElement("tr");
-        
+
         headerData.forEach((headerText) => {
             const headerCell = document.createElement("th");
             headerCell.classList.add("sc-th");
@@ -43,7 +47,7 @@ export class Table {
 
         jsonData.forEach((rowData) => {
             const row = document.createElement("tr");
-            
+
             Object.values(rowData).forEach((cellValue) => {
                 const cell = document.createElement("td");
                 cell.classList.add("sc-td");

@@ -1,5 +1,9 @@
-export class Radiogroup {
+import { UIElement } from "./uielement.js";
+
+export class Radiogroup extends UIElement {
     constructor(header) {
+        super();
+
         this.htmlElement = document.createElement("fieldset");
         this.htmlElement.classList.add("sc-fieldset");
 

@@ -1,5 +1,9 @@
-export class Tab {
+import { UIElement } from "./uielement.js";
+
+export class Tab extends UIElement{
     constructor() {
+        super();
+        
         this.htmlElementsMap = new Map();
 
         this.htmlElement = document.createElement("div");

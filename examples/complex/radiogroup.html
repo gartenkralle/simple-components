@@ -26,13 +26,10 @@
       const button = new Button("Save");
 
       radiogroup.show(targetElement);
-      button.show(targetElement);
+      button.show(targetElement);  
 
-      const label = document.createElement("label");
-      targetElement.appendChild(label);      
-
-      button.htmlElement.addEventListener("click", () => {
-        label.textContent = radiogroup.getSelectedItem();
+      button.addEventListener("click", () => {
+        console.log(radiogroup.getSelectedItem());
       });
     </script>
   </body>

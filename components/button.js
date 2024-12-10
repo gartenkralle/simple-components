@@ -8,4 +8,8 @@ export class Button {
     show(targetElement) {
         targetElement.appendChild(this.htmlElement);
     }
+
+    addEventListener(name, action) {
+        this.htmlElement.addEventListener(name, (e) => action(e));
+    }
 }

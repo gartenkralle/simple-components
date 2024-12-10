@@ -13,7 +13,7 @@ export class Radiogroup {
         this.groupName = crypto.randomUUID();
     }
 
-    add(name, value) {
+    add(name) {
         const container = document.createElement("div");
         container.classList.add("sc-radio-group-item");
 
@@ -21,7 +21,6 @@ export class Radiogroup {
         input.classList.add("sc-input");
         input.type = "radio";
         input.name = this.groupName;
-        input.value = value;
         input.id = crypto.randomUUID();
 
         const label = document.createElement("label");
@@ -37,9 +36,7 @@ export class Radiogroup {
     }
 
     getSelectedItem() {
-        const selectedRadio = this.htmlElement.querySelector('input[type="radio"]:checked');
-
-        return selectedRadio ? selectedRadio.value : null;
+        return this.htmlElement.querySelector('input[type="radio"]:checked')?.parentElement.querySelector("label").textContent;
     }
 
     show(targetElement) {

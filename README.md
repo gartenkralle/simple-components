@@ -152,9 +152,9 @@ import { Radiogroup } from "/components/radiogroup.js";
 
 const radiogroup = new Radiogroup("Which option do you want to choose?");
 
-radiogroup.add("Option 1", "option1");
-radiogroup.add("Option 2", "option2");
-radiogroup.add("Option 3", "option3");
+radiogroup.add("Option 1");
+radiogroup.add("Option 2");
+radiogroup.add("Option 3");
 
 const targetElement = document.querySelector("#radiogroup-example");
 

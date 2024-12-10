@@ -20,7 +20,7 @@
 .sc-label {  
   font-family: var(--font-family);
   font-weight: 500;
-  margin-left: 0.75rem;
+  padding-left: 0.75rem;
   font-size: 0.875rem;
 }
 

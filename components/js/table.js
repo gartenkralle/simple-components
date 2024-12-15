@@ -22,10 +22,6 @@ export class Table extends UIElement {
         this.populateBody(this.bodyData);
     }
 
-    async show(targetElement) {
-        targetElement.appendChild(this.htmlElement);
-    }
-
     populateHeaders(headerData) {
         const tableHead = this.htmlElement.querySelector("thead");
 

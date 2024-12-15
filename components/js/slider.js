@@ -20,10 +20,5 @@ export class Slider extends UIElement {
 
         this.htmlElement.appendChild(toggleSwitch);
         this.htmlElement.appendChild(span);
-
-    }
-
-    show(targetElement) {
-        targetElement.appendChild(this.htmlElement);
     }
 }

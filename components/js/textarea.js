@@ -1,7 +1,7 @@
 import { UIElement } from "./uielement.js";
 
 export class Textarea extends UIElement {
-    constructor(placeholder) {
+    constructor(placeholder, rowCount) {
         super();
         
         this.htmlElement = document.createElement("textarea");
@@ -10,19 +10,7 @@ export class Textarea extends UIElement {
         if (placeholder !== undefined) {
             this.htmlElement.placeholder = placeholder;
         }
-    }
 
-    show(targetElement) {
-        this.htmlElement.hidden = false;
-
-        targetElement.appendChild(this.htmlElement);
-
-        this.htmlElement.rows = this.getRowCount(targetElement);
-    }
-
-    getRowCount(targetElement) {
-        const lineHeight = parseFloat(window.getComputedStyle(this.htmlElement).lineHeight || "0");
-
-        return Math.floor(targetElement.clientHeight / lineHeight);
+        this.htmlElement.rows = 10;        
     }
 }

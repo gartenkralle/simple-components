@@ -7,11 +7,6 @@
   <title>Simple Javascript Library</title>
 
   <link rel="stylesheet" href="/components/css/textarea.css" />
-  <style>
-    #textarea-example {
-      height: 150px;
-    }
-  </style>
 </head>
 
 <body>
@@ -22,7 +17,7 @@
 
     const text = "This is a placeholder";
 
-    const textarea = new Textarea(text);
+    const textarea = new Textarea(text, 10);
 
     const targetElement = document.querySelector("#textarea-example");
 

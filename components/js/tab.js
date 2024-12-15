@@ -45,10 +45,7 @@ export class Tab extends UIElement{
             tabContent.replaceChildren();
             
             const content = this.htmlElementsMap.get(target);
-            
-            if (content) {
-                tabContent.appendChild(content);
-            }
+            tabContent.appendChild(content);
         });
 
         const firstTabLink = this.htmlElement.querySelector(".sc-tab-link");
@@ -70,6 +67,6 @@ export class Tab extends UIElement{
             }
         }
         
-        targetElement.appendChild(this.htmlElement);
+        super.show(targetElement);
     }
 }

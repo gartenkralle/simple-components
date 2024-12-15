@@ -42,8 +42,4 @@ export class Radiogroup extends UIElement {
     getSelectedItem() {
         return this.htmlElement.querySelector('input[type="radio"]:checked')?.parentElement.querySelector("label").textContent;
     }
-
-    show(targetElement) {
-        targetElement.appendChild(this.htmlElement);
-    }
 }

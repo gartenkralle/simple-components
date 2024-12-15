@@ -35,10 +35,6 @@ export class Dropdown extends UIElement {
         this.addEventListeners();
     }
 
-    show(targetElement) {
-        targetElement.appendChild(this.htmlElement);
-    }
-
     addEventListeners() {
         this.button.addEventListener("click", () => this.toggleDropdown());
         document.addEventListener("click", (event) => this.closeDropdownOnOutsideClick(event));

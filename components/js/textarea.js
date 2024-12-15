@@ -11,6 +11,6 @@ export class Textarea extends UIElement {
             this.htmlElement.placeholder = placeholder;
         }
 
-        this.htmlElement.rows = 10;        
+        this.htmlElement.rows = rowCount;        
     }
 }

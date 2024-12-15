@@ -33,7 +33,7 @@
     const sourceElement = new Button("Show Modal");
     const targetElement = document.querySelector("#modal-example");
 
-    sourceElement.show(targetElement);
+    sourceElement.attach(targetElement);
 
     const table = new Table(headerData, bodyData);
     const modal = new Modal();

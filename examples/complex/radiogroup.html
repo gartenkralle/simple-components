@@ -27,8 +27,8 @@
 
     const button = new Button("Save");
 
-    radiogroup.show(targetElement);
-    button.show(targetElement);
+    radiogroup.attach(targetElement);
+    button.attach(targetElement);
 
     button.addEventListener("click", () => {
       console.log(radiogroup.getSelectedItem());

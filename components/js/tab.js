@@ -55,7 +55,7 @@ export class Tab extends UIElement{
         }
     }
 
-    show(targetElement) {
+    attach(targetElement) {
         const activeLink = this.htmlElement.querySelector(".sc-tab-link.sc-active");
         
         if (activeLink) {
@@ -67,6 +67,6 @@ export class Tab extends UIElement{
             }
         }
         
-        super.show(targetElement);
+        super.attach(targetElement);
     }
 }

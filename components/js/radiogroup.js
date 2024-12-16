@@ -7,13 +7,12 @@ export class Radiogroup extends UIElement {
         this.htmlElement = document.createElement("fieldset");
         this.htmlElement.classList.add("sc-fieldset");
 
-        const legend = document.createElement("legend");
-
         if (header !== undefined) {
+            const legend = document.createElement("legend");
             legend.textContent = header;
+            this.htmlElement.appendChild(legend);
         }
 
-        this.htmlElement.appendChild(legend);
         this.groupName = crypto.randomUUID();
     }
 

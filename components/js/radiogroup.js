@@ -10,6 +10,7 @@ export class Radiogroup extends UIElement {
 
         if (header !== undefined) {
             const legend = document.createElement("legend");
+            legend.classList.add("sc-legend");
             legend.textContent = header;
             this.htmlElement.appendChild(legend);
         }

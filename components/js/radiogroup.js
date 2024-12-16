@@ -28,7 +28,7 @@ export class Radiogroup extends UIElement {
         input.id = Utils.getUId();
 
         const label = document.createElement("label");
-        label.classList.add("sc-label");
+        label.classList.add("sc-radio-label");
 
         label.textContent = name;
         label.setAttribute("for", input.id);

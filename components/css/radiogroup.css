@@ -13,14 +13,14 @@
 .sc-fieldset {
   font-family: var(--font-family);
   font-weight: 500;
-  padding: 20px;
+  padding: 20px 0;
   border: none;
 }
 
-.sc-label {  
+.sc-radio-label {  
   font-family: var(--font-family);
   font-weight: 500;
-  padding-left: 0.75rem;
+  padding: 0 0.75rem;
   font-size: 0.875rem;
 }
 

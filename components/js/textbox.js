@@ -1,4 +1,4 @@
-import { UIElement } from "./uielement.js";
+import { UIElement } from "./helper/uielement.js";
 
 export class Textbox extends UIElement {
     constructor() {

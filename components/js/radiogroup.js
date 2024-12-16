@@ -1,4 +1,5 @@
-import { UIElement } from "./uielement.js";
+import { UIElement } from "./helper/uielement.js";
+import { Utils } from "./helper/utils.js";
 
 export class Radiogroup extends UIElement {
     constructor(header) {
@@ -13,7 +14,7 @@ export class Radiogroup extends UIElement {
             this.htmlElement.appendChild(legend);
         }
 
-        this.groupName = crypto.randomUUID();
+        this.groupName = Utils.getUId();
     }
 
     add(name) {
@@ -24,7 +25,7 @@ export class Radiogroup extends UIElement {
         input.classList.add("sc-input");
         input.type = "radio";
         input.name = this.groupName;
-        input.id = crypto.randomUUID();
+        input.id = Utils.getUId();
 
         const label = document.createElement("label");
         label.classList.add("sc-label");

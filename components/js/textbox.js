@@ -8,4 +8,12 @@ export class Textbox extends UIElement {
         this.htmlElement.classList.add("sc-input");
         this.htmlElement.type = "text";
     }
+
+    set(text) {
+        this.htmlElement.value = text;
+    }
+
+    get() {
+        return this.htmlElement.value;
+    }
 }

@@ -40,13 +40,13 @@ export class Radiogroup extends UIElement {
         this.htmlElement.appendChild(container);
     }
 
-    setSelectedItem(label) {
+    set(label) {
         const inputElement = Array.from(this.htmlElement.querySelectorAll('label')).find(el => el.textContent.trim() === label).parentElement.querySelector("input");
 
         inputElement.checked = true;
     }
 
-    getSelectedItem() {
+    get() {
         return this.htmlElement.querySelector('input[type="radio"]:checked')?.parentElement.querySelector("label").textContent;
     }
 }

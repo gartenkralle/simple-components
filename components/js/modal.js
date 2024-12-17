@@ -13,7 +13,7 @@ export class Modal extends UIElement {
         this.htmlElement.appendChild(modalContent);
         document.body.appendChild(this.htmlElement);
 
-        window.addEventListener("click", (e) => {
+        window.addEventListener("mousedown", (e) => {
             if (e.target === this.htmlElement) {
                 this.htmlElement.classList.remove("sc-fade-in");
                 this.htmlElement.classList.add("sc-fade-out");

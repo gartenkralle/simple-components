@@ -15,9 +15,9 @@
   <script type="module">
     import { Textarea } from "/components/js/textarea.js";
 
-    const text = "This is a placeholder";
-
-    const textarea = new Textarea(text, 10);
+    const textarea = new Textarea();
+    textarea.setPlaceholder("This is a placeholder");
+    textarea.setRows(10);
 
     const targetElement = document.querySelector("#textarea-example");
 

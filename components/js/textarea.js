@@ -1,16 +1,18 @@
 import { UIElement } from "./helper/uielement.js";
 
 export class Textarea extends UIElement {
-    constructor(placeholder, rowCount) {
+    constructor() {
         super();
 
         this.htmlElement = document.createElement("textarea");
         this.htmlElement.classList.add("sc-textarea");
+    }
 
-        if (placeholder !== undefined) {
-            this.htmlElement.placeholder = placeholder;
-        }
+    setPlaceholder(placeholder) {
+        this.htmlElement.placeholder = placeholder;
+    }
 
+    setRows(rowCount) {
         this.htmlElement.rows = rowCount;
     }
 

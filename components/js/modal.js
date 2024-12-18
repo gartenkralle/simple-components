@@ -28,8 +28,6 @@ export class Modal extends UIElement {
             if (modal !== undefined) {
                 document.querySelector(".sc-modal").classList.remove("sc-fade-in");
                 document.querySelector(".sc-modal").classList.add("sc-fade-out");
-
-                history.back();
             }
         });
 

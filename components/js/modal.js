@@ -17,6 +17,19 @@ export class Modal extends UIElement {
             if (e.target === this.htmlElement) {
                 this.htmlElement.classList.remove("sc-fade-in");
                 this.htmlElement.classList.add("sc-fade-out");
+                
+                history.back();
+            }
+        });
+
+        window.addEventListener("popstate", () => {
+            const modal = document.querySelector(".sc-modal");
+
+            if (modal !== undefined) {
+                document.querySelector(".sc-modal").classList.remove("sc-fade-in");
+                document.querySelector(".sc-modal").classList.add("sc-fade-out");
+
+                history.back();
             }
         });
 
@@ -39,6 +52,8 @@ export class Modal extends UIElement {
             this.htmlElement.style.display = "flex";
             this.htmlElement.classList.remove("sc-fade-out");
             this.htmlElement.classList.add("sc-fade-in");
+
+            history.pushState({ open: true }, null);
         });
     }
 }

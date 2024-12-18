@@ -3,20 +3,20 @@ import { UIElement } from "./base/uielement.js";
 export class Dropdown extends UIElement {
     constructor(text, options) {
         super();
-        
+
         this.htmlElement = document.createElement("div");
         this.htmlElement.className = "sc-dropdown";
         this.htmlElement.setAttribute("aria-expanded", "false");
-        
+
         const button = document.createElement("button");
         button.className = "sc-dropdown-button";
         button.textContent = text;
-        
+
         this.htmlElement.appendChild(button);
 
         const dropdownMenu = document.createElement("div");
         dropdownMenu.className = "sc-dropdown-menu";
-        
+
         options.forEach((option) => {
             const item = document.createElement("a");
             item.href = "#";
@@ -32,22 +32,37 @@ export class Dropdown extends UIElement {
         this.items = this.menu.querySelectorAll(".sc-dropdown-item");
         this.isOpen = false;
 
-        this.addEventListeners();
+        this.#addEventListeners();
     }
 
-    addEventListeners() {
-        this.button.addEventListener("click", () => this.toggleDropdown());
-        document.addEventListener("click", (event) => this.closeDropdownOnOutsideClick(event));
-        this.items.forEach((item) => item.addEventListener("click", (e) => this.onItemClick(e)));
+    addEventListener(name, action) {
+        this.items.forEach((item) => item.addEventListener(name, (e) => action(e)));
     }
 
-    toggleDropdown() {
+    set(text) {
+        const item = Array.from(document.querySelectorAll('.sc-dropdown-item')).find(item => item.textContent === text);
+        item.dispatchEvent(new CustomEvent('change'));
+
+        this.button.textContent = text;
+    }
+
+    get() {
+        return this.htmlElement.querySelector(".sc-dropdown-button").textContent;
+    }
+    
+    #addEventListeners() {
+        this.button.addEventListener("click", () => this.#toggleDropdown());
+        document.addEventListener("click", (e) => this.#closeDropdownOnOutsideClick(e));
+        this.items.forEach((item) => item.addEventListener("click", (e) => this.#onItemClick(e)));
+    }
+
+    #toggleDropdown() {
         this.isOpen = !this.isOpen;
         this.menu.style.display = this.isOpen ? "block" : "none";
         this.button.setAttribute("aria-expanded", this.isOpen.toString());
     }
 
-    closeDropdownOnOutsideClick(event) {
+    #closeDropdownOnOutsideClick(event) {
         if (!this.htmlElement.contains(event.target)) {
             this.isOpen = false;
             this.menu.style.display = "none";
@@ -55,19 +70,13 @@ export class Dropdown extends UIElement {
         }
     }
 
-    onItemClick(event) {
-        event.preventDefault();
+    #onItemClick(e) {
+        e.preventDefault();
 
-        this.button.textContent = event.target.textContent;   
-        
-        this.toggleDropdown();
+        this.button.textContent = e.target.textContent;
 
-        event.target.dispatchEvent(new CustomEvent('change', {
-            target: event
-        }));
-    }
+        this.#toggleDropdown();
 
-    addEventListener(name, action) {
-        this.items.forEach((item) => item.addEventListener(name, (e) => action(e)));
+        e.target.dispatchEvent(new CustomEvent('change'));
     }
 }

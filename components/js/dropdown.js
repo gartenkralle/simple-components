@@ -1,7 +1,7 @@
 import { UIElement } from "./base/uielement.js";
 
 export class Dropdown extends UIElement {
-    constructor(text, options) {
+    constructor(options) {
         super();
 
         this.htmlElement = document.createElement("div");
@@ -10,7 +10,6 @@ export class Dropdown extends UIElement {
 
         const button = document.createElement("button");
         button.className = "sc-dropdown-button";
-        button.textContent = text;
 
         this.htmlElement.appendChild(button);
 
@@ -40,7 +39,7 @@ export class Dropdown extends UIElement {
     }
 
     set(text) {
-        const item = Array.from(document.querySelectorAll('.sc-dropdown-item')).find(item => item.textContent === text);
+        const item = Array.from(this.items).find(item => item.textContent === text);
         item.dispatchEvent(new CustomEvent('change'));
 
         this.button.textContent = text;
@@ -49,7 +48,11 @@ export class Dropdown extends UIElement {
     get() {
         return this.htmlElement.querySelector(".sc-dropdown-button").textContent;
     }
-    
+
+    setPlaceholder(placeholder) {        
+        this.button.textContent = placeholder;
+    }
+
     #addEventListeners() {
         this.button.addEventListener("click", () => this.#toggleDropdown());
         document.addEventListener("click", (e) => this.#closeDropdownOnOutsideClick(e));

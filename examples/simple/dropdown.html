@@ -15,9 +15,9 @@
   <script type="module">
     import { Dropdown } from "/components/js/dropdown.js";
 
-    const options = ["Option 1", "Option 2", "Option 3"];
-    const text = "Select an option";
-    const dropdown = new Dropdown(text, options);
+    const dropdown = new Dropdown(["Option 1", "Option 2", "Option 3"]);
+    dropdown.setPlaceholder("Select an option");
+
     const targetElement = document.querySelector("#dropdown-example");
 
     dropdown.attach(targetElement);
@@ -25,6 +25,8 @@
     dropdown.addEventListener("change", (e) => {
       console.log(e.target.text);
     });
+
+    dropdown.set("Option 2");    
   </script>
 </body>
 

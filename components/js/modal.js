@@ -7,17 +7,17 @@ export class Modal extends UIElement {
         this.htmlElement = document.createElement("div");
         this.htmlElement.classList.add("sc-modal");
 
-        const modalContent = document.createElement("div");
-        modalContent.classList.add("sc-modal-content");
+        this.modalContent = document.createElement("div");
+        this.modalContent.classList.add("sc-modal-content");
 
-        this.htmlElement.appendChild(modalContent);
+        this.htmlElement.appendChild(this.modalContent);
         document.body.appendChild(this.htmlElement);
 
         window.addEventListener("mousedown", (e) => {
             if (e.target === this.htmlElement) {
                 this.htmlElement.classList.remove("sc-fade-in");
                 this.htmlElement.classList.add("sc-fade-out");
-                
+                this.htmlElement.dispatchEvent(new CustomEvent('closed'));
                 history.back();
             }
         });
@@ -26,8 +26,9 @@ export class Modal extends UIElement {
             const modal = document.querySelector(".sc-modal");
 
             if (modal !== undefined) {
-                document.querySelector(".sc-modal").classList.remove("sc-fade-in");
-                document.querySelector(".sc-modal").classList.add("sc-fade-out");
+                modal.classList.remove("sc-fade-in");
+                modal.classList.add("sc-fade-out");
+                modal.dispatchEvent(new CustomEvent('closed'));
             }
         });
 
@@ -40,9 +41,7 @@ export class Modal extends UIElement {
     }
 
     add(htmlElement) {
-        const modalContent = this.htmlElement.querySelector(".sc-modal-content");
-
-        modalContent.appendChild(htmlElement);
+        this.modalContent.appendChild(htmlElement);
     }
 
     connect(sourceElement) {
@@ -50,6 +49,7 @@ export class Modal extends UIElement {
             this.htmlElement.style.display = "flex";
             this.htmlElement.classList.remove("sc-fade-out");
             this.htmlElement.classList.add("sc-fade-in");
+            this.htmlElement.dispatchEvent(new CustomEvent('opened'));
 
             history.pushState({ open: true }, null);
         });

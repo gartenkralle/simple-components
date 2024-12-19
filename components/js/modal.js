@@ -18,18 +18,6 @@ export class Modal extends UIElement {
                 this.htmlElement.classList.remove("sc-fade-in");
                 this.htmlElement.classList.add("sc-fade-out");
                 this.htmlElement.dispatchEvent(new CustomEvent('closed'));
-
-                history.back();
-            }
-        });
-
-        window.addEventListener("popstate", () => {
-            const modal = document.querySelector(".sc-modal");
-
-            if (modal !== undefined) {
-                modal.classList.remove("sc-fade-in");
-                modal.classList.add("sc-fade-out");
-                modal.dispatchEvent(new CustomEvent('closed'));
             }
         });
 
@@ -51,8 +39,6 @@ export class Modal extends UIElement {
             this.htmlElement.classList.remove("sc-fade-out");
             this.htmlElement.classList.add("sc-fade-in");
             this.htmlElement.dispatchEvent(new CustomEvent('opened'));
-
-            history.pushState({ open: true }, null);
         });
     }
 }

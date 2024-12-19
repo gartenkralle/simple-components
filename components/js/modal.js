@@ -18,6 +18,7 @@ export class Modal extends UIElement {
                 this.htmlElement.classList.remove("sc-fade-in");
                 this.htmlElement.classList.add("sc-fade-out");
                 this.htmlElement.dispatchEvent(new CustomEvent('closed'));
+
                 history.back();
             }
         });
@@ -32,8 +33,8 @@ export class Modal extends UIElement {
             }
         });
 
-        this.htmlElement.addEventListener("animationend", (event) => {
-            if (event.animationName === "fadeOut") {
+        this.htmlElement.addEventListener("animationend", (e) => {
+            if (e.animationName === "fadeOut") {
                 this.htmlElement.style.display = "none";
                 this.htmlElement.classList.remove("sc-fade-out");
             }

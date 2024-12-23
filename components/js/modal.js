@@ -15,9 +15,7 @@ export class Modal extends UIElement {
 
         this.htmlElement.addEventListener("mousedown", (e) => {
             if (e.target === this.htmlElement) {
-                this.htmlElement.classList.remove("sc-fade-in");
-                this.htmlElement.classList.add("sc-fade-out");
-                this.htmlElement.dispatchEvent(new CustomEvent('closed'));
+                this.hide();
             }
         });
 
@@ -35,10 +33,20 @@ export class Modal extends UIElement {
 
     connect(sourceElement) {
         sourceElement.addEventListener("click", () => {
-            this.htmlElement.style.display = "flex";
-            this.htmlElement.classList.remove("sc-fade-out");
-            this.htmlElement.classList.add("sc-fade-in");
-            this.htmlElement.dispatchEvent(new CustomEvent('opened'));
+            this.show();
         });
+    }
+
+    show(){
+        this.htmlElement.style.display = "flex";
+        this.htmlElement.classList.remove("sc-fade-out");
+        this.htmlElement.classList.add("sc-fade-in");
+        this.htmlElement.dispatchEvent(new CustomEvent('opened'));
+    }
+
+    hide(){
+        this.htmlElement.classList.remove("sc-fade-in");
+        this.htmlElement.classList.add("sc-fade-out");
+        this.htmlElement.dispatchEvent(new CustomEvent('closed'));
     }
 }

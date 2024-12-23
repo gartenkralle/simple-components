@@ -20,9 +20,13 @@ export class Modal extends UIElement {
         });
 
         this.htmlElement.addEventListener("animationend", (e) => {
-            if (e.animationName === "fadeOut") {
+            if (e.animationName === "fadeIn") {
+                this.htmlElement.dispatchEvent(new CustomEvent('shown'));
+            }
+            else if (e.animationName === "fadeOut") {
                 this.htmlElement.style.display = "none";
                 this.htmlElement.classList.remove("sc-fade-out");
+                this.htmlElement.dispatchEvent(new CustomEvent('hidden'));
             }
         });
     }
@@ -41,12 +45,12 @@ export class Modal extends UIElement {
         this.htmlElement.style.display = "flex";
         this.htmlElement.classList.remove("sc-fade-out");
         this.htmlElement.classList.add("sc-fade-in");
-        this.htmlElement.dispatchEvent(new CustomEvent('opened'));
+        this.htmlElement.dispatchEvent(new CustomEvent('show'));
     }
 
     hide(){
         this.htmlElement.classList.remove("sc-fade-in");
         this.htmlElement.classList.add("sc-fade-out");
-        this.htmlElement.dispatchEvent(new CustomEvent('closed'));
+        this.htmlElement.dispatchEvent(new CustomEvent('hide'));
     }
 }

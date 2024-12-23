@@ -34,6 +34,10 @@ export class Dropdown extends UIElement {
         this.#addEventListeners();
     }
 
+    focus() {
+        this.htmlElement.querySelector(".sc-dropdown-button").focus();
+    }
+    
     addEventListener(name, action) {
         this.items.forEach((item) => item.addEventListener(name, (e) => action(e)));
     }

@@ -21,6 +21,6 @@ export class Textarea extends UIElement {
     }
 
     get() {
-        return this.htmlElement.textContent;
+        return this.htmlElement.value;
     }
 }

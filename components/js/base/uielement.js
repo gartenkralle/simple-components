@@ -14,4 +14,8 @@ export class UIElement {
     addEventListener(name, action) {
         this.htmlElement.addEventListener(name, (e) => action(e));
     }
+
+    dispatchEvent(customEvent){
+        this.htmlElement.dispatchEvent(customEvent);    
+    }
 }

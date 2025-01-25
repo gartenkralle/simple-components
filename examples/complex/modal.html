@@ -33,7 +33,7 @@
     const sourceElement = new Button("Show Modal");
     const targetElement = document.querySelector("#modal-example");
 
-    sourceElement.attach(targetElement);
+    targetElement.appendChild(sourceElement);
 
     const table = new Table(headerData, bodyData);
     const modal = new Modal();
@@ -41,9 +41,9 @@
     const button = new Button("Button inside modal");
 
     modal.add(table.htmlElement);
-    modal.add(button.htmlElement);
+    modal.add(button);
 
-    modal.connect(sourceElement.htmlElement);
+    modal.connect(sourceElement);
   </script>
 </body>
 

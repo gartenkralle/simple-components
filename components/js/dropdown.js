@@ -1,17 +1,17 @@
 import { UIElement } from "./base/uielement.js";
 
-export class Dropdown extends UIElement {
+export class Dropdown extends HTMLElement {
     constructor(options) {
         super();
 
-        this.htmlElement = document.createElement("div");
-        this.htmlElement.className = "sc-dropdown";
-        this.htmlElement.setAttribute("aria-expanded", "false");
+        const htmlElement = document.createElement("div");
+        htmlElement.className = "sc-dropdown";
+        htmlElement.setAttribute("aria-expanded", "false");
 
         const button = document.createElement("button");
         button.className = "sc-dropdown-button";
 
-        this.htmlElement.appendChild(button);
+        htmlElement.appendChild(button);
 
         const dropdownMenu = document.createElement("div");
         dropdownMenu.className = "sc-dropdown-menu";
@@ -24,18 +24,20 @@ export class Dropdown extends UIElement {
             dropdownMenu.appendChild(item);
         });
 
-        this.htmlElement.appendChild(dropdownMenu);
+        htmlElement.appendChild(dropdownMenu);
 
-        this.button = this.htmlElement.querySelector(".sc-dropdown-button");
-        this.menu = this.htmlElement.querySelector(".sc-dropdown-menu");
+        this.button = htmlElement.querySelector(".sc-dropdown-button");
+        this.menu = htmlElement.querySelector(".sc-dropdown-menu");
         this.items = this.menu.querySelectorAll(".sc-dropdown-item");
         this.isOpen = false;
 
         this.#addEventListeners();
+
+        this.appendChild(htmlElement);
     }
 
     focus() {
-        this.htmlElement.querySelector(".sc-dropdown-button").focus();
+        this.querySelector(".sc-dropdown-button").focus();
     }
     
     addEventListener(name, action) {
@@ -50,7 +52,7 @@ export class Dropdown extends UIElement {
     }
 
     get() {
-        return this.htmlElement.querySelector(".sc-dropdown-button").textContent;
+        return this.querySelector(".sc-dropdown-button").textContent;
     }
 
     setPlaceholder(placeholder) {        
@@ -70,7 +72,7 @@ export class Dropdown extends UIElement {
     }
 
     #closeDropdownOnOutsideClick(event) {
-        if (!this.htmlElement.contains(event.target)) {
+        if (!this.contains(event.target)) {
             this.isOpen = false;
             this.menu.style.display = "none";
             this.button.setAttribute("aria-expanded", "false");
@@ -87,3 +89,5 @@ export class Dropdown extends UIElement {
         e.target.dispatchEvent(new CustomEvent('change'));
     }
 }
+
+customElements.define("simple-dropdown", Dropdown);

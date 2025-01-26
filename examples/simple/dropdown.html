@@ -20,7 +20,7 @@
 
     const targetElement = document.querySelector("#dropdown-example");
 
-    dropdown.attach(targetElement);
+    targetElement.appendChild(dropdown);
 
     dropdown.addEventListener("change", (e) => {
       console.log(e.target.text);

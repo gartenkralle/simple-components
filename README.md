@@ -73,7 +73,7 @@ const modal = new Modal();
 
 const otherButton = new Button("Button inside modal");
 
-modal.add(table.htmlElement);
+modal.add(table);
 modal.add(otherButton);
 
 button.addEventListener("click", () => {

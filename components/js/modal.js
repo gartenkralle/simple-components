@@ -1,56 +1,51 @@
-import { UIElement } from "./base/uielement.js";
-
-export class Modal extends UIElement {
+export class Modal extends HTMLElement {
     constructor() {
         super();
 
-        this.htmlElement = document.createElement("div");
-        this.htmlElement.classList.add("sc-modal");
+        this.modal = document.createElement("div");
+        this.modal.classList.add("sc-modal");
 
         this.modalContent = document.createElement("div");
         this.modalContent.classList.add("sc-modal-content");
 
-        this.htmlElement.appendChild(this.modalContent);
-        document.body.appendChild(this.htmlElement);
+        this.modal.appendChild(this.modalContent);
 
-        this.htmlElement.addEventListener("mousedown", (e) => {
-            if (e.target === this.htmlElement) {
+        this.modal.addEventListener("mousedown", (e) => {
+            if (e.target === this.modal) {
                 this.hide();
             }
         });
 
-        this.htmlElement.addEventListener("animationend", (e) => {
+        this.modal.addEventListener("animationend", (e) => {
             if (e.animationName === "fadeIn") {
-                this.htmlElement.dispatchEvent(new CustomEvent('shown'));
+                this.modal.dispatchEvent(new CustomEvent('shown'));
             }
             else if (e.animationName === "fadeOut") {
-                this.htmlElement.style.display = "none";
-                this.htmlElement.classList.remove("sc-fade-out");
-                this.htmlElement.dispatchEvent(new CustomEvent('hidden'));
+                this.modal.style.display = "none";
+                this.modal.classList.remove("sc-fade-out");
+                this.modal.dispatchEvent(new CustomEvent('hidden'));
             }
         });
+
+        this.appendChild(this.modal);
     }
 
     add(htmlElement) {
         this.modalContent.appendChild(htmlElement);
     }
 
-    connect(sourceElement) {
-        sourceElement.addEventListener("click", () => {
-            this.show();
-        });
-    }
-
     show(){
-        this.htmlElement.style.display = "flex";
-        this.htmlElement.classList.remove("sc-fade-out");
-        this.htmlElement.classList.add("sc-fade-in");
-        this.htmlElement.dispatchEvent(new CustomEvent('show'));
+        this.modal.style.display = "flex";
+        this.modal.classList.remove("sc-fade-out");
+        this.modal.classList.add("sc-fade-in");
+        this.modal.dispatchEvent(new CustomEvent('show'));
     }
 
     hide(){
-        this.htmlElement.classList.remove("sc-fade-in");
-        this.htmlElement.classList.add("sc-fade-out");
-        this.htmlElement.dispatchEvent(new CustomEvent('hide'));
+        this.modal.classList.remove("sc-fade-in");
+        this.modal.classList.add("sc-fade-out");
+        this.modal.dispatchEvent(new CustomEvent('hide'));
     }
 }
+
+customElements.define("simple-modal", Modal);

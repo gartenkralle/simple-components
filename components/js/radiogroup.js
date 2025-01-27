@@ -1,21 +1,22 @@
-import { UIElement } from "./base/uielement.js";
 import { Utils } from "./helper/utils.js";
 
-export class Radiogroup extends UIElement {
+export class Radiogroup extends HTMLElement {
     constructor(header) {
         super();
 
-        this.htmlElement = document.createElement("fieldset");
-        this.htmlElement.classList.add("sc-fieldset");
+        this.radiogroup = document.createElement("fieldset");
+        this.radiogroup.classList.add("sc-fieldset");
 
         if (header !== undefined) {
             const legend = document.createElement("legend");
             legend.classList.add("sc-legend");
             legend.textContent = header;
-            this.htmlElement.appendChild(legend);
+            this.radiogroup.appendChild(legend);
         }
 
         this.groupName = Utils.getUId();
+
+        this.appendChild(this.radiogroup);
     }
 
     add(name) {
@@ -37,16 +38,18 @@ export class Radiogroup extends UIElement {
         container.appendChild(input);
         container.appendChild(label);
 
-        this.htmlElement.appendChild(container);
+        this.radiogroup.appendChild(container);
     }
 
     set(label) {
-        const inputElement = Array.from(this.htmlElement.querySelectorAll('label')).find(el => el.textContent.trim() === label).parentElement.querySelector("input");
+        const inputElement = Array.from(this.radiogroup.querySelectorAll('label')).find(el => el.textContent.trim() === label).parentElement.querySelector("input");
 
         inputElement.checked = true;
     }
 
     get() {
-        return this.htmlElement.querySelector('input[type="radio"]:checked')?.parentElement.querySelector("label").textContent;
+        return this.radiogroup.querySelector('input[type="radio"]:checked')?.parentElement.querySelector("label").textContent;
     }
 }
+
+customElements.define("simple-radiogroup", Radiogroup);

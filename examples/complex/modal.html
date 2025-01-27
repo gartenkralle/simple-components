@@ -30,20 +30,24 @@
     const response = await fetch("/data/customers.json");
     const bodyData = await response.json();
 
-    const sourceElement = new Button("Show Modal");
+    const button = new Button("Show Modal");
     const targetElement = document.querySelector("#modal-example");
 
-    targetElement.appendChild(sourceElement);
+    targetElement.appendChild(button);
 
     const table = new Table(headerData, bodyData);
     const modal = new Modal();
 
-    const button = new Button("Button inside modal");
+    const otherButton = new Button("Button inside modal");
 
     modal.add(table.htmlElement);
-    modal.add(button);
+    modal.add(otherButton);
 
-    modal.connect(sourceElement);
+    button.addEventListener("click", () => {
+      modal.show();
+    });
+
+    document.body.appendChild(modal);
   </script>
 </body>
 

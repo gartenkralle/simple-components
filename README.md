@@ -13,7 +13,7 @@ const button = new Button("Button example");
 
 const targetElement = document.querySelector("#button-example");
 
-button.attach(targetElement);
+targetElement.appendChild(button);
 ```
 
 ## SoftButton
@@ -27,7 +27,7 @@ const button = new SoftButton("Softbutton example");
 
 const targetElement = document.querySelector("#softbutton-example");
 
-button.attach(targetElement);
+targetElement.appendChild(button);
 ```
 
 ## Table
@@ -39,14 +39,14 @@ import { Table } from "/components/js/table.js";
 
 const headerData = ["Name", "Email", "Salary"];
 
-const response = await fetch("data/customers.json");
+const response = await fetch("/data/customers.json");
 const bodyData = await response.json();
 
 const targetElement = document.querySelector("#table-example");
 
 const table = new Table(headerData, bodyData);
 
-table.attach(targetElement);
+targetElement.appendChild(table);
 ```
 
 ## Modal
@@ -60,20 +60,27 @@ import { Modal } from "/components/js/modal.js";
 
 const headerData = ["Name", "Email", "Salary"];
 
-const response = await fetch("data/customers.json");
+const response = await fetch("/data/customers.json");
 const bodyData = await response.json();
 
-const sourceElement = document.querySelector("#modal-button");
+const button = new Button("Show Modal");
+const targetElement = document.querySelector("#modal-example");
+
+targetElement.appendChild(button);
 
 const table = new Table(headerData, bodyData);
 const modal = new Modal();
 
-const button = new Button("Button inside modal");
+const otherButton = new Button("Button inside modal");
 
 modal.add(table.htmlElement);
-modal.add(button.htmlElement);
+modal.add(otherButton);
 
-modal.connect(sourceElement);
+button.addEventListener("click", () => {
+    modal.show();
+});
+
+document.body.appendChild(modal);
 ```
 
 ## Tab
@@ -86,15 +93,15 @@ import { Tab } from "/components/js/tab.js";
 
 const orderHeaderData = ["Id", "Customer Id", "Order Date", "Shipping Date", "State", "Total Amount", "Payment Method"];
 const customerHeaderData = ["Name", "Email", "Salary"];
-const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Phone", "Type"];
+const addressHeaderData = ["Id", "Customer Id", "Name", "Street", "City", "State", "Postal Code", "Country", "Type"];
 
-const orderResponse = await fetch("data/orders.json");
+const orderResponse = await fetch("/data/orders.json");
 const orderBodyData = await orderResponse.json();
 
-const customerResponse = await fetch("data/customers.json");
+const customerResponse = await fetch("/data/customers.json");
 const customerBodyData = await customerResponse.json();
 
-const addressResponse = await fetch("data/address.json");
+const addressResponse = await fetch("/data/address.json");
 const addressBodyData = await addressResponse.json();
 
 const orderTable = new Table(orderHeaderData, orderBodyData);
@@ -105,11 +112,11 @@ const targetElement = document.querySelector("#tab-example");
 
 const tab = new Tab();
 
-tab.add("Orders", orderTable.htmlElement);
-tab.add("Customers", customerTable.htmlElement);
-tab.add("Addresses", addressTable.htmlElement);
+tab.add("Orders", orderTable);
+tab.add("Customers", customerTable);
+tab.add("Addresses", addressTable);
 
-tab.attach(targetElement);
+targetElement.appendChild(tab);
 ```
 
 ## Dropdown
@@ -119,12 +126,18 @@ tab.attach(targetElement);
 ```javascript
 import { Dropdown } from "/components/js/dropdown.js";
 
-const options = ["Option 1", "Option 2", "Option 3"];
-const text = "Select an option";
-const dropdown = new Dropdown(text, options);
+const dropdown = new Dropdown(["Option 1", "Option 2", "Option 3"]);
+dropdown.setPlaceholder("Select an option");
+
 const targetElement = document.querySelector("#dropdown-example");
 
-dropdown.attach(targetElement);
+targetElement.appendChild(dropdown);
+
+dropdown.addEventListener("change", (e) => {
+    console.log(e.target.text);
+});
+
+dropdown.set("Option 2");  
 ```
 
 ## Textarea
@@ -134,13 +147,13 @@ dropdown.attach(targetElement);
 ```javascript
 import { Textarea } from "/components/js/textarea.js";
 
-const placeholder = "This is a placeholder";
-
-const textarea = new Textarea(placeholder, 10);
+const textarea = new Textarea();
+textarea.setPlaceholder("This is a placeholder");
+textarea.setRows(10);
 
 const targetElement = document.querySelector("#textarea-example");
 
-textarea.attach(targetElement);
+targetElement.appendChild(textarea);
 ```
 
 ## Radiogroup
@@ -149,6 +162,7 @@ textarea.attach(targetElement);
 
 ```javascript
 import { Radiogroup } from "/components/js/radiogroup.js";
+import { Button } from "/components/js/button.js";
 
 const radiogroup = new Radiogroup("Which option do you want to choose?");
 
@@ -158,7 +172,14 @@ radiogroup.add("Option 3");
 
 const targetElement = document.querySelector("#radiogroup-example");
 
-radiogroup.attach(targetElement);
+const button = new Button("Save");
+
+targetElement.appendChild(radiogroup);
+targetElement.appendChild(button);
+
+button.addEventListener("click", () => {
+    console.log(radiogroup.get());
+});
 ```
 
 ## Textbox
@@ -172,7 +193,7 @@ const textbox = new Textbox();
 
 const targetElement = document.querySelector("#textbox-example");
 
-textbox.attach(targetElement);
+targetElement.appendChild(textbox);
 ```
 
 ## Slider
@@ -186,7 +207,7 @@ const slider = new Slider("Slider label");
 
 const targetElement = document.querySelector("#slider-example");
 
-slider.attach(targetElement);
+targetElement.appendChild(slider);
 ```
 
 ## CDN

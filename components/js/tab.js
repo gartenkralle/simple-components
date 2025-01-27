@@ -1,33 +1,32 @@
-import { UIElement } from "./base/uielement.js";
-
-export class Tab extends UIElement{
+export class Tab extends HTMLElement {
     constructor() {
         super();
         
         this.htmlElementsMap = new Map();
 
-        this.htmlElement = document.createElement("div");
-        this.htmlElement.classList.add("sc-tab-container");
+        this.tab = document.createElement("div");
+        this.tab.classList.add("sc-tab-container");
         
-        const nav = document.createElement("nav");
-        nav.classList.add("sc-tab-nav");
+        this.nav = document.createElement("nav");
+        this.nav.classList.add("sc-tab-nav");
         
-        const content = document.createElement("div");
-        content.classList.add("sc-tab-content");
+        this.tabContent = document.createElement("div");
+        this.tabContent.classList.add("sc-tab-content");
         
-        this.htmlElement.appendChild(nav);
-        this.htmlElement.appendChild(content);
+        this.tab.appendChild(this.nav);
+        this.tab.appendChild(this.tabContent);
+
+        this.appendChild(this.tab);
     }
 
     add(tabName, htmlElement) {
-        const nav = this.htmlElement.querySelector("nav");
         const link = document.createElement("a");
         
         link.href = "#";
         link.textContent = tabName;
         link.classList.add("sc-tab-link");
         
-        nav.appendChild(link);
+        this.nav.appendChild(link);
         
         this.htmlElementsMap.set(link, htmlElement);
         
@@ -41,32 +40,28 @@ export class Tab extends UIElement{
 
             target.classList.add("sc-active");
             
-            const tabContent = this.htmlElement.querySelector(".sc-tab-content");
-            tabContent.replaceChildren();
+            this.tabContent.replaceChildren();
             
             const content = this.htmlElementsMap.get(target);
-            tabContent.appendChild(content);
+            this.tabContent.appendChild(content);
         });
 
-        const firstTabLink = this.htmlElement.querySelector(".sc-tab-link");
+        const firstTabLink = this.tab.querySelector(".sc-tab-link");
         
         if (firstTabLink) {
             firstTabLink.classList.add("sc-active");
         }
-    }
 
-    attach(targetElement) {
-        const activeLink = this.htmlElement.querySelector(".sc-tab-link.sc-active");
+        const activeLink = this.tab.querySelector(".sc-tab-link.sc-active");
         
         if (activeLink) {
             const content = this.htmlElementsMap.get(activeLink);
-            const tabContent = this.htmlElement.querySelector(".sc-tab-content");
             
             if (content) {
-                tabContent.appendChild(content);
+                this.tabContent.appendChild(content);
             }
         }
-        
-        super.attach(targetElement);
     }
 }
+
+customElements.define("simple-tab", Tab);

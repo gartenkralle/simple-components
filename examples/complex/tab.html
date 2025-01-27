@@ -38,11 +38,11 @@
 
     const tab = new Tab();
 
-    tab.add("Orders", orderTable.htmlElement);
-    tab.add("Customers", customerTable.htmlElement);
-    tab.add("Addresses", addressTable.htmlElement);
+    tab.add("Orders", orderTable);
+    tab.add("Customers", customerTable);
+    tab.add("Addresses", addressTable);
 
-    tab.attach(targetElement);
+    targetElement.appendChild(tab);
   </script>
 </body>
 

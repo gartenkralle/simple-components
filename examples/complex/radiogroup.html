@@ -32,8 +32,8 @@
 
     const button = new Button("Save");
 
-    radiogroup.attach(targetElement);
-    button.attach(targetElement);
+    targetElement.appendChild(radiogroup);
+    targetElement.appendChild(button);
 
     button.addEventListener("click", () => {
       console.log(radiogroup.get());

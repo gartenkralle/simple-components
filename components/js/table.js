@@ -1,13 +1,11 @@
-import { UIElement } from "./base/uielement.js";
-
-export class Table extends UIElement {
+export class Table extends HTMLElement {
     constructor(headerData, bodyData) {
         super();
 
         this.bodyData = bodyData;
         this.headerData = headerData;
-        this.htmlElement = document.createElement("table");
-        this.htmlElement.classList.add("sc-table")
+        this.table = document.createElement("table");
+        this.table.classList.add("sc-table")
 
         const header = document.createElement("thead");
         header.classList.add("sc-thead");
@@ -15,15 +13,17 @@ export class Table extends UIElement {
         const body = document.createElement("tbody");
         body.classList.add("sc-tbody");
 
-        this.htmlElement.appendChild(header);
-        this.htmlElement.appendChild(body);
+        this.table.appendChild(header);
+        this.table.appendChild(body);
 
         this.populateHeaders(this.headerData);
         this.populateBody(this.bodyData);
+
+        this.appendChild(this.table);
     }
 
     populateHeaders(headerData) {
-        const tableHead = this.htmlElement.querySelector("thead");
+        const tableHead = this.table.querySelector("thead");
 
         const headerRow = document.createElement("tr");
 
@@ -39,7 +39,7 @@ export class Table extends UIElement {
     }
 
     populateBody(jsonData) {
-        const tableBody = this.htmlElement.querySelector("tbody");
+        const tableBody = this.table.querySelector("tbody");
 
         jsonData.forEach((rowData) => {
             const row = document.createElement("tr");
@@ -56,3 +56,6 @@ export class Table extends UIElement {
         });
     }
 }
+
+customElements.define("simple-table", Table);
+

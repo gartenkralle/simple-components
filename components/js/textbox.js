@@ -1,19 +1,21 @@
-import { UIElement } from "./base/uielement.js";
-
-export class Textbox extends UIElement {
+export class Textbox extends HTMLElement {
     constructor() {
         super();
 
-        this.htmlElement = document.createElement("input");
-        this.htmlElement.classList.add("sc-input");
-        this.htmlElement.type = "text";
+        this.textbox = document.createElement("input");
+        this.textbox.classList.add("sc-input");
+        this.textbox.type = "text";
+
+        this.appendChild(this.textbox);
     }
 
     set(text) {
-        this.htmlElement.value = text;
+        this.textbox.value = text;
     }
 
     get() {
-        return this.htmlElement.value;
+        return this.textbox.value;
     }
 }
+
+customElements.define("simple-textbox", Textbox);

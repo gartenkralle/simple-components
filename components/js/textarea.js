@@ -1,26 +1,30 @@
 import { UIElement } from "./base/uielement.js";
 
-export class Textarea extends UIElement {
+export class Textarea extends HTMLElement {
     constructor() {
         super();
 
-        this.htmlElement = document.createElement("textarea");
-        this.htmlElement.classList.add("sc-textarea");
+        this.textarea = document.createElement("textarea");
+        this.textarea.classList.add("sc-textarea");
+
+        this.appendChild(this.textarea);
     }
 
     setPlaceholder(placeholder) {
-        this.htmlElement.placeholder = placeholder;
+        this.textarea.placeholder = placeholder;
     }
 
     setRows(rowCount) {
-        this.htmlElement.rows = rowCount;
+        this.textarea.rows = rowCount;
     }
 
     set(text) {
-        this.htmlElement.textContent = text;
+        this.textarea.textContent = text;
     }
 
     get() {
-        return this.htmlElement.value;
+        return this.textarea.value;
     }
 }
+
+customElements.define("simple-textarea", Textarea);

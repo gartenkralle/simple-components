@@ -1,43 +1,42 @@
-import { UIElement } from "./base/uielement.js";
-
 export class Dropdown extends HTMLElement {
     constructor(options) {
         super();
 
-        const htmlElement = document.createElement("div");
-        htmlElement.className = "sc-dropdown";
-        htmlElement.setAttribute("aria-expanded", "false");
+        this.dropdown = document.createElement("div");
+        this.dropdown.className = "sc-dropdown";
+        this.dropdown.setAttribute("aria-expanded", "false");
 
-        const button = document.createElement("button");
-        button.className = "sc-dropdown-button";
+        this.button = document.createElement("button");
+        this.button.className = "sc-dropdown-button";
 
-        htmlElement.appendChild(button);
+        this.dropdown.appendChild(this.button);
 
-        const dropdownMenu = document.createElement("div");
-        dropdownMenu.className = "sc-dropdown-menu";
+        this.dropdownMenu = document.createElement("div");
+        this.dropdownMenu.className = "sc-dropdown-menu";
 
         options.forEach((option) => {
             const item = document.createElement("a");
             item.href = "#";
             item.className = "sc-dropdown-item";
             item.textContent = option;
-            dropdownMenu.appendChild(item);
+
+            this.dropdownMenu.appendChild(item);
         });
 
-        htmlElement.appendChild(dropdownMenu);
+        this.dropdown.appendChild(this.dropdownMenu);
 
-        this.button = htmlElement.querySelector(".sc-dropdown-button");
-        this.menu = htmlElement.querySelector(".sc-dropdown-menu");
+        this.button = this.dropdown.querySelector(".sc-dropdown-button");
+        this.menu = this.dropdown.querySelector(".sc-dropdown-menu");
         this.items = this.menu.querySelectorAll(".sc-dropdown-item");
         this.isOpen = false;
 
         this.#addEventListeners();
 
-        this.appendChild(htmlElement);
+        this.appendChild(this.dropdown);
     }
 
     focus() {
-        this.querySelector(".sc-dropdown-button").focus();
+        this.button.focus();
     }
     
     addEventListener(name, action) {
@@ -52,7 +51,7 @@ export class Dropdown extends HTMLElement {
     }
 
     get() {
-        return this.querySelector(".sc-dropdown-button").textContent;
+        return this.button.textContent;
     }
 
     setPlaceholder(placeholder) {        

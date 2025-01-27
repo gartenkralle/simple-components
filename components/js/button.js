@@ -1,14 +1,12 @@
-import { UIElement } from "./base/uielement.js";
-
 export class Button extends HTMLElement {
     constructor(text) {
         super();
 
-        const buttonElement = document.createElement("button");
-        buttonElement.classList.add("sc-button");
-        buttonElement.innerText = text;
+        this.buttonElement = document.createElement("button");
+        this.buttonElement.classList.add("sc-button");
+        this.buttonElement.innerText = text;
 
-        this.appendChild(buttonElement);
+        this.appendChild(this.buttonElement);
     }
 }
 

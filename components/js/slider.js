@@ -1,24 +1,27 @@
-import { UIElement } from "./base/uielement.js";
-
-export class Slider extends UIElement {
+export class Slider extends HTMLElement {
     constructor(text) {
         super();
-        this.htmlElement = document.createElement("div");
-        this.htmlElement.classList.add("sc-toggle-container");
 
-        const toggleSwitch = document.createElement("div");
-        toggleSwitch.id = "toggle-switch";
-        toggleSwitch.classList.add("sc-toggle-switch");
+        this.slider = document.createElement("div");
+        this.slider.classList.add("sc-toggle-container");
 
-        toggleSwitch.addEventListener('click', () => {
-            toggleSwitch.classList.toggle('sc-active');
+        this.toggleSwitch = document.createElement("div");
+        this.toggleSwitch.id = "toggle-switch";
+        this.toggleSwitch.classList.add("sc-toggle-switch");
+
+        this.toggleSwitch.addEventListener('click', () => {
+            this.toggleSwitch.classList.toggle('sc-active');
         });
 
-        const span = document.createElement("span");
-        span.classList.add("sc-label");
-        span.textContent = text;
+        this.span = document.createElement("span");
+        this.span.classList.add("sc-label");
+        this.span.textContent = text;
 
-        this.htmlElement.appendChild(toggleSwitch);
-        this.htmlElement.appendChild(span);
+        this.slider.appendChild(this.toggleSwitch);
+        this.slider.appendChild(this.span);
+
+        this.appendChild(this.slider);
     }
 }
+
+customElements.define("simple-slider", Slider);

@@ -34,14 +34,14 @@ export class Modal extends HTMLElement {
         this.modalContent.appendChild(htmlElement);
     }
 
-    show(){
+    show() {
         this.modal.style.display = "flex";
         this.modal.classList.remove("sc-fade-out");
         this.modal.classList.add("sc-fade-in");
         this.modal.dispatchEvent(new CustomEvent('show'));
     }
 
-    hide(){
+    hide() {
         this.modal.classList.remove("sc-fade-in");
         this.modal.classList.add("sc-fade-out");
         this.modal.dispatchEvent(new CustomEvent('hide'));

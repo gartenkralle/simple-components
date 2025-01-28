@@ -1,0 +1,24 @@
+.block {
+  display: block;
+}
+
+.text-sm {
+  font-size:  0.875rem; 
+  line-height: calc(1.25 / 0.875);
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.leading-6 {
+  line-height: calc(0.25rem * 6)
+}
+
+.text-gray-900 {
+  color: oklch(0.21 0.034 264.665);
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}

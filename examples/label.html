@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
+
+  <link rel="stylesheet" href="/components/css/label.css" />
+</head>
+
+<body>
+  <script type="module">
+    import { Label } from "/components/js/label.js";
+
+    const label = new Label("This is a label text");
+
+    document.body.appendChild(label);
+  </script>
+</body>
+
+</html>

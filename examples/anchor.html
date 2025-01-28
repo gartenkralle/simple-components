@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Javascript Library</title>
+
+  <link rel="stylesheet" href="/components/css/anchor.css" />
+</head>
+
+<body>
+  <script type="module">
+    import { Anchor } from "/components/js/anchor.js";
+
+    const anchor = new Anchor("This is an anchor element", "https://www.google.com");
+
+    document.body.appendChild(anchor);
+  </script>
+</body>
+
+</html>

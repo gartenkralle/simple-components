@@ -1,0 +1,17 @@
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.text-sky-600 {
+  color: oklch(.588 .158 241.966);
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  .hover\:underline:hover {
+      text-decoration-line: underline;
+  }
+}

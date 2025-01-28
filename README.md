@@ -235,6 +235,7 @@ document.body.appendChild(label);
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/radiogroup.js)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textbox.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textbox.js)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/slider.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/slider.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/label.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/label.js)
 
 ### CSS
 
@@ -248,3 +249,4 @@ document.body.appendChild(label);
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/radiogroup.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textbox.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textbox.css)
 [https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/slider.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/slider.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/label.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/label.css)

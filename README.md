@@ -210,30 +210,41 @@ const targetElement = document.querySelector("#slider-example");
 targetElement.appendChild(slider);
 ```
 
+## Label
+
+![Class diagram](images/label.png)
+
+```javascript
+import { Label } from "/components/js/label.js";
+
+const label = new Label("This is a label text");
+
+document.body.appendChild(label);
+```
 ## CDN
 
 ### JS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/button.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/button.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/softbutton.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/softbutton.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/dropdown.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/dropdown.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/table.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/modal.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/tab.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/tab.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/textarea.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/textarea.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/radiogroup.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/textbox.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/textbox.js)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/slider.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/js/slider.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/button.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/button.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/softbutton.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/softbutton.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/dropdown.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/dropdown.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/table.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/table.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/modal.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/modal.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/tab.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/tab.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textarea.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textarea.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/radiogroup.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/radiogroup.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textbox.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/textbox.js)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/slider.js](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/js/slider.js)
 
 ### CSS
 
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/button.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/softbutton.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/softbutton.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/dropdown.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/dropdown.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/table.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/modal.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/tab.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/tab.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/textarea.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/textarea.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/radiogroup.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/textbox.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/textbox.css)
-[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/slider.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.0/components/css/slider.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/button.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/button.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/softbutton.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/softbutton.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/dropdown.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/dropdown.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/table.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/table.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/modal.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/modal.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/tab.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/tab.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textarea.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textarea.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/radiogroup.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/radiogroup.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textbox.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/textbox.css)
+[https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/slider.css](https://cdn.jsdelivr.net/gh/gartenkralle/simple-components@2.0.1/components/css/slider.css)

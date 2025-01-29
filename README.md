@@ -2,6 +2,8 @@
 
 # simple-components
 
+Javascript web components library.
+
 ## Button
 
 ![Class diagram](images/button.png)

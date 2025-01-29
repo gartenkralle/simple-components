@@ -1,5 +1,3 @@
-import { UIElement } from "./base/uielement.js";
-
 export class Textarea extends HTMLElement {
     constructor() {
         super();

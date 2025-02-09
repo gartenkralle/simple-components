@@ -5,7 +5,7 @@ export class Anchor extends HTMLElement {
         this.anchor = document.createElement("a");
         this.anchor.style = `
             font-family: var(--font-family);
-            color: oklch(.588 .158 241.966);
+            color: var(--primary-color);
             text-decoration-line: none;`;
 
         this.anchor.addEventListener("mouseenter", function(){

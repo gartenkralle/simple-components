@@ -3,10 +3,7 @@
         super();
         this.attachShadow({ mode: 'open' });
         this.currentIndex = 0;
-        this.images = [];
-      }
 
-      connectedCallback() {
         this.css = document.createElement("style");
         this.css.textContent = `
 
@@ -130,12 +127,7 @@
         .indicator:hover {
           background: rgba(255, 255, 255, 0.8);
         }`;
-
-        this.images = Array.from(this.querySelectorAll('img')).map(img => ({
-          src: img.src,
-          alt: img.alt || ''
-        }));
-        
+       
         this.startX = 0;
         this.currentX = 0;
         this.isDragging = false;
@@ -147,78 +139,66 @@
       }
 
       render() {
-          const container = document.createElement("div");
-          container.className = "slider-container";
+          this.container = document.createElement("div");
+          this.container.className = "slider-container";
 
-          const imageWrapper = document.createElement("div");
-          imageWrapper.className = "image-wrapper";
+          this.imageWrapper = document.createElement("div");
+          this.imageWrapper.className = "image-wrapper";
 
-          this.images.forEach((img, i) => {
-            const imgEl = document.createElement("img");
-            imgEl.src = img.src;
-            imgEl.alt = img.alt || "";
-            imgEl.className = "slider-image" + (i === 0 ? " active" : "");
-            imageWrapper.appendChild(imgEl);
-          });
-
-          container.appendChild(imageWrapper);
+          this.container.appendChild(this.imageWrapper);
 
           const controls = document.createElement("div");
           controls.className = "controls";
 
-          const prevBtn = document.createElement("button");
-          prevBtn.className = "btn prev-btn";
-          prevBtn.title = "Previous";
+          this.prevBtn = document.createElement("button");
+          this.prevBtn.className = "btn prev-btn";
+          this.prevBtn.title = "Previous";
 
-          const nextBtn = document.createElement("button");
-          nextBtn.className = "btn next-btn";
-          nextBtn.title = "Next";
+          this.nextBtn = document.createElement("button");
+          this.nextBtn.className = "btn next-btn";
+          this.nextBtn.title = "Next";
 
-          controls.appendChild(prevBtn);
-          controls.appendChild(nextBtn);
-          container.appendChild(controls);
+          controls.appendChild(this.prevBtn);
+          controls.appendChild(this.nextBtn);
+          this.container.appendChild(controls);
 
-          const indicators = document.createElement("div");
-          indicators.className = "indicators";
+          this.indicators = document.createElement("div");
+          this.indicators.className = "indicators";
 
-          this.images.forEach((_, i) => {
-            const ind = document.createElement("button");
-            ind.className = "indicator" + (i === 0 ? " active" : "");
-            ind.dataset.index = i;
-            indicators.appendChild(ind);
-          });
-
-          container.appendChild(indicators);
-          this.shadowRoot.appendChild(container);
+          this.container.appendChild(this.indicators);
+          this.shadowRoot.appendChild(this.container);
       }
 
       add(url){
         const img = document.createElement("img");
         img.src = url;
+        img.classList.add("slider-image");
 
+        if(!this.imageWrapper.hasChildNodes()){
+          img.classList.add("active");
+        }
+
+        const count = this.indicators.children.length;
+        const indicator = document.createElement("button");
+        indicator.className = "indicator" + (count === 0 ? " active" : "");
+        indicator.dataset.index = count;
+
+        indicator.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          this.goToSlide(index);
+        });
+
+        this.indicators.appendChild(indicator);
         this.imageWrapper.appendChild(img);
       }
 
       setupEventListeners() {
-        const container = this.shadowRoot.querySelector('.slider-container');
-        const imageWrapper = this.shadowRoot.querySelector('.image-wrapper');
-        const prevBtn = this.shadowRoot.querySelector('.prev-btn');
-        const nextBtn = this.shadowRoot.querySelector('.next-btn');
-        const indicators = this.shadowRoot.querySelectorAll('.indicator');
-
-        prevBtn.addEventListener('click', () => this.prev());
-        nextBtn.addEventListener('click', () => this.next());
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
         //fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
 
-        indicators.forEach(indicator => {
-          indicator.addEventListener('click', (e) => {
-            const index = parseInt(e.target.dataset.index);
-            this.goToSlide(index);
-          });
-        });
-
-        imageWrapper.addEventListener('mousedown', (e) => this.handleDragStart(e));
-        imageWrapper.addEventListener('touchstart', (e) => this.handleDragStart(e), { passive: true });
+        this.imageWrapper.addEventListener('mousedown', (e) => this.handleDragStart(e));
+        this.imageWrapper.addEventListener('touchstart', (e) => this.handleDragStart(e), { passive: true });
         
         document.addEventListener('mousemove', (e) => this.handleDragMove(e));
         document.addEventListener('touchmove', (e) => this.handleDragMove(e), { passive: true });
@@ -227,7 +207,7 @@
         document.addEventListener('touchend', (e) => this.handleDragEnd(e));
 
         document.addEventListener('keydown', (e) => {
-          if (!container.classList.contains('fullscreen')) return;
+          if (!this.container.classList.contains('fullscreen')) return;
           
           if (e.key === 'ArrowLeft') this.prev();
           if (e.key === 'ArrowRight') this.next();
@@ -237,20 +217,18 @@
 
       goToSlide(index) {
         this.currentIndex = index;
-        const images = this.shadowRoot.querySelectorAll('.slider-image');
-        const indicators = this.shadowRoot.querySelectorAll('.indicator');
 
-        images.forEach((img, i) => {
+        this.imageWrapper.childNodes.forEach((img, i) => {
           img.classList.toggle('active', i === index);
         });
 
-        indicators.forEach((ind, i) => {
+        this.indicators.childNodes.forEach((ind, i) => {
           ind.classList.toggle('active', i === index);
         });
       }
 
       next() {
-        if (this.currentIndex < this.images.length - 1) {
+        if (this.currentIndex < this.imageWrapper.children.length - 1) {
           this.currentIndex++;
           this.goToSlide(this.currentIndex);
         }
@@ -263,19 +241,17 @@
         }
       }
 
-      toggleFullscreen() {
-        const container = this.shadowRoot.querySelector('.slider-container');
-        
-        if (!container.classList.contains('fullscreen')) {
-          container.classList.add('fullscreen');
-        } else {
+      toggleFullscreen() {        
+        if (!this.container.classList.contains('fullscreen')) {
+          this.container.classList.add('fullscreen');
+        } 
+        else {
           this.exitFullscreen();
         }
       }
 
       exitFullscreen() {
-        const container = this.shadowRoot.querySelector('.slider-container');
-        container.classList.remove('fullscreen');
+        this.container.classList.remove('fullscreen');
       }
 
       handleDragStart(e) {
@@ -283,8 +259,7 @@
         this.startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
         this.currentX = this.startX;
         
-        const imageWrapper = this.shadowRoot.querySelector('.image-wrapper');
-        imageWrapper.classList.add('dragging');
+        this.imageWrapper.classList.add('dragging');
       }
 
       handleDragMove(e) {
@@ -294,6 +269,7 @@
         const diff = this.currentX - this.startX;
         
         const activeImage = this.shadowRoot.querySelector('.slider-image.active');
+
         if (activeImage) {
           activeImage.style.transform = `translateX(${diff}px)`;
         }
@@ -303,13 +279,13 @@
         if (!this.isDragging) return;
         
         this.isDragging = false;
-        const imageWrapper = this.shadowRoot.querySelector('.image-wrapper');
-        imageWrapper.classList.remove('dragging');
+        this.imageWrapper.classList.remove('dragging');
         
         const diff = this.currentX - this.startX;
         const threshold = 50;
         
         const activeImage = this.shadowRoot.querySelector('.slider-image.active');
+
         if (activeImage) {
           activeImage.style.transform = '';
         }
@@ -317,7 +293,8 @@
         if (Math.abs(diff) > threshold) {
           if (diff > 0) {
             this.prev();
-          } else {
+          }
+          else {
             this.next();
           }
         }

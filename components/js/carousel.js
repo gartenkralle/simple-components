@@ -13,7 +13,6 @@ export class Carousel extends HTMLElement {
       .slider-container {
         position: relative;
         width: 100%;
-        background: #000;
         border-radius: 8px;
         overflow: hidden;
       }
@@ -50,6 +49,7 @@ export class Carousel extends HTMLElement {
         display: none;
         transition: transform 0.1s ease-out;
         pointer-events: none;
+        justify-self: center;
       }
 
       .fullscreen .slider-image {

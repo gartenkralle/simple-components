@@ -1,7 +1,6 @@
 export class Carousel extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
 
     this.css = document.createElement("style");
     this.css.textContent = `
@@ -103,7 +102,7 @@ export class Carousel extends HTMLElement {
     this.currentX = 0;
     this.isDragging = false;
 
-    this.shadowRoot.appendChild(this.css);
+    this.appendChild(this.css);
 
     this.container = document.createElement("div");
     this.container.className = "slider-container";
@@ -124,7 +123,7 @@ export class Carousel extends HTMLElement {
     this.container.appendChild(this.prevBtn);
     this.container.appendChild(this.nextBtn);
 
-    this.shadowRoot.appendChild(this.container);
+    this.appendChild(this.container);
 
     this.prevBtn.addEventListener('click', () => this.prev());
     this.nextBtn.addEventListener('click', () => this.next());
@@ -209,7 +208,7 @@ export class Carousel extends HTMLElement {
     this.currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     const diff = this.currentX - this.startX;
 
-    const activeImage = this.shadowRoot.querySelector('.slider-image.active');
+    const activeImage = this.querySelector('.slider-image.active');
 
     if (activeImage) {
       activeImage.style.transform = `translateX(${diff}px)`;
@@ -225,7 +224,7 @@ export class Carousel extends HTMLElement {
     const diff = this.currentX - this.startX;
     const threshold = 50;
 
-    const activeImage = this.shadowRoot.querySelector('.slider-image.active');
+    const activeImage = this.querySelector('.slider-image.active');
 
     if (activeImage) {
       activeImage.style.transform = '';

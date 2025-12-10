@@ -35,12 +35,7 @@ export class Carousel extends HTMLElement {
         width: 100%;
         aspect-ratio: 16 / 9;
         overflow: hidden;
-        cursor: grab;
         user-select: none;
-      }
-
-      .image-wrapper.dragging {
-        cursor: grabbing;
       }
 
       .fullscreen .image-wrapper {
@@ -247,7 +242,7 @@ export class Carousel extends HTMLElement {
   toggleFullscreen() {
     if (!this.container.classList.contains('fullscreen')) {
       this.container.classList.add('fullscreen');
-    } 
+    }
     else {
       this.exitFullscreen();
     }

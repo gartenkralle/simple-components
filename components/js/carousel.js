@@ -31,7 +31,6 @@ export class Carousel extends HTMLElement {
       .image-wrapper {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 9;
         overflow: hidden;
         user-select: none;
       }
@@ -113,11 +112,11 @@ export class Carousel extends HTMLElement {
     this.container.appendChild(this.imageWrapper);
 
     this.prevBtn = document.createElement("img");
-    this.prevBtn.src = "/components/img/prev.svg";
+    this.prevBtn.src = "https://cdn.jsdelivr.net/gh/gartenkralle/simple-components/components/img/prev.svg";
     this.prevBtn.className = "nav-btn prev";
 
     this.nextBtn = document.createElement("img");
-    this.nextBtn.src = "/components/img/next.svg";
+    this.nextBtn.src = "https://cdn.jsdelivr.net/gh/gartenkralle/simple-components/components/img/next.svg";
     this.nextBtn.className = "nav-btn next";
 
     this.container.appendChild(this.prevBtn);
